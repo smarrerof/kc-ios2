@@ -12,7 +12,12 @@
 		49D2CABF1F71068F00FBC491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CABD1F71068F00FBC491 /* Main.storyboard */; };
 		49D2CAC11F71068F00FBC491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CAC01F71068F00FBC491 /* Assets.xcassets */; };
 		49D2CAC41F71068F00FBC491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CAC21F71068F00FBC491 /* LaunchScreen.storyboard */; };
-		49D2CACF1F71068F00FBC491 /* MadridShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2CACE1F71068F00FBC491 /* MadridShopsTests.swift */; };
+		49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */; };
+		49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF21F71B239001BCBE6 /* Typealias.swift */; };
+		49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */; };
+		49E60FF71F71B2D7001BCBE6 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF61F71B2D7001BCBE6 /* Shop.swift */; };
+		49E60FF91F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF81F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift */; };
+		49E60FFC1F71B414001BCBE6 /* ShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +39,14 @@
 		49D2CAC31F71068F00FBC491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49D2CAC51F71068F00FBC491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49D2CACA1F71068F00FBC491 /* MadridShopsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadridShopsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49D2CACE1F71068F00FBC491 /* MadridShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadridShopsTests.swift; sourceTree = "<group>"; };
 		49D2CAD01F71068F00FBC491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractor.swift; sourceTree = "<group>"; };
+		49E60FF21F71B239001BCBE6 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsProtocol.swift; sourceTree = "<group>"; };
+		49E60FF61F71B2D7001BCBE6 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		49E60FF81F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorFakeImpl.swift; sourceTree = "<group>"; };
+		49E60FFA1F71B413001BCBE6 /* MadridShopsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MadridShopsTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +101,9 @@
 		49D2CACD1F71068F00FBC491 /* MadridShopsTests */ = {
 			isa = PBXGroup;
 			children = (
-				49D2CACE1F71068F00FBC491 /* MadridShopsTests.swift */,
 				49D2CAD01F71068F00FBC491 /* Info.plist */,
+				49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */,
+				49E60FFA1F71B413001BCBE6 /* MadridShopsTests-Bridging-Header.h */,
 			);
 			path = MadridShopsTests;
 			sourceTree = "<group>";
@@ -99,6 +111,7 @@
 		49E60FEA1F71B0CC001BCBE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49E60FEE1F71B1BB001BCBE6 /* Interactors */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +131,26 @@
 				49D2CABB1F71068F00FBC491 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		49E60FEE1F71B1BB001BCBE6 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				49E60FEF1F71B1D3001BCBE6 /* Protocols */,
+				49E60FF21F71B239001BCBE6 /* Typealias.swift */,
+				49E60FF61F71B2D7001BCBE6 /* Shop.swift */,
+				49E60FF81F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		49E60FEF1F71B1D3001BCBE6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */,
+				49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +207,7 @@
 					};
 					49D2CAC91F71068F00FBC491 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 49D2CAB51F71068E00FBC491;
 					};
@@ -224,6 +258,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D2CABC1F71068F00FBC491 /* ViewController.swift in Sources */,
+				49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */,
+				49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */,
+				49E60FF91F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */,
+				49E60FF71F71B2D7001BCBE6 /* Shop.swift in Sources */,
+				49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */,
 				49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49D2CACF1F71068F00FBC491 /* MadridShopsTests.swift in Sources */,
+				49E60FFC1F71B414001BCBE6 /* ShopsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,11 +445,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MadridShopsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiomarrero.MadridShopsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MadridShopsTests/MadridShopsTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadridShops.app/MadridShops";
@@ -422,11 +464,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MadridShopsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiomarrero.MadridShopsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MadridShopsTests/MadridShopsTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadridShops.app/MadridShops";
