@@ -78,10 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				49D2CAB91F71068F00FBC491 /* AppDelegate.swift */,
-				49D2CABB1F71068F00FBC491 /* ViewController.swift */,
-				49D2CABD1F71068F00FBC491 /* Main.storyboard */,
+				49E60FEA1F71B0CC001BCBE6 /* Models */,
+				49E60FEB1F71B0DA001BCBE6 /* Views */,
+				49E60FEC1F71B0F0001BCBE6 /* Controllers */,
 				49D2CAC01F71068F00FBC491 /* Assets.xcassets */,
-				49D2CAC21F71068F00FBC491 /* LaunchScreen.storyboard */,
 				49D2CAC51F71068F00FBC491 /* Info.plist */,
 			);
 			path = MadridShops;
@@ -94,6 +94,30 @@
 				49D2CAD01F71068F00FBC491 /* Info.plist */,
 			);
 			path = MadridShopsTests;
+			sourceTree = "<group>";
+		};
+		49E60FEA1F71B0CC001BCBE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49E60FEB1F71B0DA001BCBE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49D2CABD1F71068F00FBC491 /* Main.storyboard */,
+				49D2CAC21F71068F00FBC491 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49E60FEC1F71B0F0001BCBE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49D2CABB1F71068F00FBC491 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
