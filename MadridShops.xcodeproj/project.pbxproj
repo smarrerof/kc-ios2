@@ -18,6 +18,8 @@
 		49E60FF71F71B2D7001BCBE6 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF61F71B2D7001BCBE6 /* Shop.swift */; };
 		49E60FF91F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF81F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift */; };
 		49E60FFC1F71B414001BCBE6 /* ShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */; };
+		49E60FFE1F74035F001BCBE6 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FFD1F74035E001BCBE6 /* ShopCell.swift */; };
+		49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610001F740537001BCBE6 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		49E60FF81F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		49E60FFA1F71B413001BCBE6 /* MadridShopsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MadridShopsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTests.swift; sourceTree = "<group>"; };
+		49E60FFD1F74035E001BCBE6 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		49E610001F740537001BCBE6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				49D2CAB91F71068F00FBC491 /* AppDelegate.swift */,
+				49E60FFF1F7404EE001BCBE6 /* Utils */,
 				49E60FEA1F71B0CC001BCBE6 /* Models */,
 				49E60FEB1F71B0DA001BCBE6 /* Views */,
 				49E60FEC1F71B0F0001BCBE6 /* Controllers */,
@@ -121,6 +126,7 @@
 			children = (
 				49D2CABD1F71068F00FBC491 /* Main.storyboard */,
 				49D2CAC21F71068F00FBC491 /* LaunchScreen.storyboard */,
+				49E60FFD1F74035E001BCBE6 /* ShopCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +157,14 @@
 				49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		49E60FFF1F7404EE001BCBE6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				49E610001F740537001BCBE6 /* StringExtensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,8 @@
 				49D2CABC1F71068F00FBC491 /* ViewController.swift in Sources */,
 				49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */,
 				49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */,
+				49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */,
+				49E60FFE1F74035F001BCBE6 /* ShopCell.swift in Sources */,
 				49E60FF91F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */,
 				49E60FF71F71B2D7001BCBE6 /* Shop.swift in Sources */,
 				49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */,

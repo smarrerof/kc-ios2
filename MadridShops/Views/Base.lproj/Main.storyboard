@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,6 +53,42 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-Fx-IhM">
                                 <rect key="frame" x="0.0" y="365.5" width="375" height="301.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShopCell" id="c2x-QS-8Uz" customClass="ShopCell" customModule="MadridShops" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c2x-QS-8Uz" id="Hup-P3-g6O">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwV-H8-XJz">
+                                                    <rect key="frame" x="60" y="11" width="307" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQ7-8T-wsm">
+                                                    <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="VYk-0u-hf6"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wQ7-8T-wsm" firstAttribute="centerY" secondItem="Hup-P3-g6O" secondAttribute="centerY" id="4Wi-aq-qLy"/>
+                                                <constraint firstItem="MwV-H8-XJz" firstAttribute="trailing" secondItem="Hup-P3-g6O" secondAttribute="trailingMargin" id="MFM-44-Y3V"/>
+                                                <constraint firstItem="wQ7-8T-wsm" firstAttribute="centerY" secondItem="MwV-H8-XJz" secondAttribute="centerY" id="NgP-WD-HbZ"/>
+                                                <constraint firstItem="MwV-H8-XJz" firstAttribute="leading" secondItem="wQ7-8T-wsm" secondAttribute="trailing" constant="8" symbolic="YES" id="lTc-kl-TlY"/>
+                                                <constraint firstItem="wQ7-8T-wsm" firstAttribute="top" secondItem="Hup-P3-g6O" secondAttribute="top" id="uRw-3t-8um"/>
+                                                <constraint firstItem="wQ7-8T-wsm" firstAttribute="leading" secondItem="Hup-P3-g6O" secondAttribute="leadingMargin" id="yLE-52-qzB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logoImageView" destination="wQ7-8T-wsm" id="oj2-fE-sgS"/>
+                                            <outlet property="nameLabel" destination="MwV-H8-XJz" id="1A6-cJ-1jS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOn-cF-KfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187.5" y="115.5"/>
+            <point key="canvasLocation" x="1186.4000000000001" y="114.69265367316342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nrf-s2-kf6">
