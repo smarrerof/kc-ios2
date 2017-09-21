@@ -19,6 +19,7 @@ final class DownloadAllShopsInteractorFakeImpl: DownloadAllShopsInteractor {
         for i in 0...100 {
             let shop = Shop(name: "Shop number \( i )")
             shop.address = "Address \( i )"
+            shop.logo = "https://lorempixel.com/100/100/"
             
             shops.add(shop: shop)
         }
