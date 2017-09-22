@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2CAB91F71068F00FBC491 /* AppDelegate.swift */; };
-		49D2CABC1F71068F00FBC491 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2CABB1F71068F00FBC491 /* ViewController.swift */; };
+		49D2CABC1F71068F00FBC491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2CABB1F71068F00FBC491 /* MainViewController.swift */; };
 		49D2CABF1F71068F00FBC491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CABD1F71068F00FBC491 /* Main.storyboard */; };
 		49D2CAC11F71068F00FBC491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CAC01F71068F00FBC491 /* Assets.xcassets */; };
 		49D2CAC41F71068F00FBC491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CAC21F71068F00FBC491 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,9 @@
 		49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610001F740537001BCBE6 /* StringExtensions.swift */; };
 		49E610031F740A2C001BCBE6 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610021F740A2C001BCBE6 /* ShopsViewController.swift */; };
 		49E610051F744723001BCBE6 /* ShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610041F744722001BCBE6 /* ShopTests.swift */; };
+		49E610081F74FBDF001BCBE6 /* MadridShops.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49E610061F74FBDF001BCBE6 /* MadridShops.xcdatamodeld */; };
+		49E6100A1F74FE19001BCBE6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610091F74FE19001BCBE6 /* CoreDataStack.swift */; };
+		49E6100D1F74FE93001BCBE6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E6100C1F74FE92001BCBE6 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		49D2CAB61F71068F00FBC491 /* MadridShops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadridShops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D2CAB91F71068F00FBC491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49D2CABB1F71068F00FBC491 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49D2CABB1F71068F00FBC491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		49D2CABE1F71068F00FBC491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49D2CAC01F71068F00FBC491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49D2CAC31F71068F00FBC491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		49E610001F740537001BCBE6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		49E610021F740A2C001BCBE6 /* ShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
 		49E610041F744722001BCBE6 /* ShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTests.swift; sourceTree = "<group>"; };
+		49E610071F74FBDF001BCBE6 /* MadridShops.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MadridShops.xcdatamodel; sourceTree = "<group>"; };
+		49E610091F74FE19001BCBE6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		49E6100C1F74FE92001BCBE6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E6100D1F74FE93001BCBE6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 				49D2CAB81F71068F00FBC491 /* MadridShops */,
 				49D2CACD1F71068F00FBC491 /* MadridShopsTests */,
 				49D2CAB71F71068F00FBC491 /* Products */,
+				49E6100B1F74FE91001BCBE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +131,7 @@
 			children = (
 				49E60FEE1F71B1BB001BCBE6 /* Interactors */,
 				49E60FF61F71B2D7001BCBE6 /* Shop.swift */,
+				49E610061F74FBDF001BCBE6 /* MadridShops.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,7 +149,7 @@
 		49E60FEC1F71B0F0001BCBE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				49D2CABB1F71068F00FBC491 /* ViewController.swift */,
+				49D2CABB1F71068F00FBC491 /* MainViewController.swift */,
 				49E610021F740A2C001BCBE6 /* ShopsViewController.swift */,
 			);
 			path = Controllers;
@@ -169,8 +178,17 @@
 			isa = PBXGroup;
 			children = (
 				49E610001F740537001BCBE6 /* StringExtensions.swift */,
+				49E610091F74FE19001BCBE6 /* CoreDataStack.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		49E6100B1F74FE91001BCBE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49E6100C1F74FE92001BCBE6 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,15 +295,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49D2CABC1F71068F00FBC491 /* ViewController.swift in Sources */,
+				49D2CABC1F71068F00FBC491 /* MainViewController.swift in Sources */,
 				49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */,
 				49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */,
+				49E6100A1F74FE19001BCBE6 /* CoreDataStack.swift in Sources */,
 				49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */,
 				49E60FFE1F74035F001BCBE6 /* ShopCell.swift in Sources */,
 				49E60FF91F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */,
 				49E60FF71F71B2D7001BCBE6 /* Shop.swift in Sources */,
 				49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */,
 				49E610031F740A2C001BCBE6 /* ShopsViewController.swift in Sources */,
+				49E610081F74FBDF001BCBE6 /* MadridShops.xcdatamodeld in Sources */,
 				49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +552,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49E610061F74FBDF001BCBE6 /* MadridShops.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49E610071F74FBDF001BCBE6 /* MadridShops.xcdatamodel */,
+			);
+			currentVersion = 49E610071F74FBDF001BCBE6 /* MadridShops.xcdatamodel */;
+			path = MadridShops.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49D2CAAE1F71068E00FBC491 /* Project object */;
 }
