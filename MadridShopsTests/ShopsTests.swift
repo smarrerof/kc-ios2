@@ -18,7 +18,7 @@ class ShopsTests: XCTestCase {
     
     func testGivenShopsWithOneElementNumberShopsIsOne() {
         let sut = Shops()
-        sut.add(shop: Shop(name: "Shop"))
+        sut.add(shop: Shop(name: "Shop", address: "Address"))
         XCTAssertEqual(1, sut.count())
     }
 }

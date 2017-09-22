@@ -21,6 +21,7 @@
 		49E60FFE1F74035F001BCBE6 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FFD1F74035E001BCBE6 /* ShopCell.swift */; };
 		49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610001F740537001BCBE6 /* StringExtensions.swift */; };
 		49E610031F740A2C001BCBE6 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610021F740A2C001BCBE6 /* ShopsViewController.swift */; };
+		49E610051F744723001BCBE6 /* ShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E610041F744722001BCBE6 /* ShopTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		49E60FFD1F74035E001BCBE6 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		49E610001F740537001BCBE6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		49E610021F740A2C001BCBE6 /* ShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
+		49E610041F744722001BCBE6 /* ShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				49D2CAD01F71068F00FBC491 /* Info.plist */,
-				49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */,
 				49E60FFA1F71B413001BCBE6 /* MadridShopsTests-Bridging-Header.h */,
+				49E610041F744722001BCBE6 /* ShopTests.swift */,
+				49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */,
 			);
 			path = MadridShopsTests;
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				49E60FEE1F71B1BB001BCBE6 /* Interactors */,
+				49E60FF61F71B2D7001BCBE6 /* Shop.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,7 +151,6 @@
 			children = (
 				49E60FEF1F71B1D3001BCBE6 /* Protocols */,
 				49E60FF21F71B239001BCBE6 /* Typealias.swift */,
-				49E60FF61F71B2D7001BCBE6 /* Shop.swift */,
 				49E60FF81F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift */,
 			);
 			path = Interactors;
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E60FFC1F71B414001BCBE6 /* ShopsTests.swift in Sources */,
+				49E610051F744723001BCBE6 /* ShopTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
