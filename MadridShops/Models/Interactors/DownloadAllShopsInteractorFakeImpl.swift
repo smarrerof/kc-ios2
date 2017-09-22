@@ -16,7 +16,7 @@ final class DownloadAllShopsInteractorFakeImpl: DownloadAllShopsInteractor {
     func execute(onSuccess: @escaping shopsSuccessClosure, onError: errorClosure = nil) {
         let shops = Shops()
         
-        for i in 0...100 {
+        for i in 1...100 {
             let shop = Shop(name: "Shop \( i )", address: "Address \( i )")
             shop.logo = "https://lorempixel.com/100/100/"
             

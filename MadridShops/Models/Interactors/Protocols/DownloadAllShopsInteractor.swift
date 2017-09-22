@@ -8,12 +8,8 @@
 
 import Foundation
 
-
-import Foundation
-
 protocol DownloadAllShopsInteractor {
     // execute: downloads all shops. Return on the main thread
     func execute(onSuccess: @escaping shopsSuccessClosure)
     func execute(onSuccess: @escaping shopsSuccessClosure, onError: errorClosure)
-    
 }
