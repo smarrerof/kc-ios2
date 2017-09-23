@@ -41,6 +41,20 @@ class ShopsViewController: UIViewController {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
+        self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: shopEntity)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowShopDetailSegue" {
+            let shopDetailViewController = segue.destination as! ShopDetailViewController
+            
+            let shopEntity: ShopEntity = sender as! ShopEntity
+            shopDetailViewController.shop = mapShopEntityIntoShop(shopEntity: shopEntity)
+        }
+    }
+    
     // MARK: - Fetched results controller
     var _fetchedResultsController: NSFetchedResultsController<ShopEntity>? = nil
     

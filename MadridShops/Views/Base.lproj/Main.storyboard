@@ -108,11 +108,83 @@
                     </view>
                     <connections>
                         <outlet property="shopsTableView" destination="3SD-Fx-IhM" id="BLM-pK-zf7"/>
+                        <segue destination="SM3-gi-QnH" kind="show" identifier="ShowShopDetailSegue" id="ZTU-aX-5VR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOn-cF-KfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1186.4000000000001" y="114.69265367316342"/>
+        </scene>
+        <!--Shop Detail View Controller-->
+        <scene sceneID="Y5j-s4-01X">
+            <objects>
+                <viewController id="SM3-gi-QnH" customClass="ShopDetailViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VmR-X8-gD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Skp-Es-BOW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="e0t-fH-fgT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YT1-5j-Lod">
+                                <rect key="frame" x="16" y="233" width="343" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-eA-ZSp">
+                                <rect key="frame" x="16" y="267.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erf-ZB-kj1">
+                                <rect key="frame" x="16" y="296.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO8-An-cjM">
+                                <rect key="frame" x="16" y="325.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HAa-DT-YoV" firstAttribute="trailing" secondItem="YT1-5j-Lod" secondAttribute="trailing" constant="16" id="7z3-pv-GEo"/>
+                            <constraint firstItem="HAa-DT-YoV" firstAttribute="trailing" secondItem="erf-ZB-kj1" secondAttribute="trailing" constant="16" id="8Es-KL-mpA"/>
+                            <constraint firstItem="bhx-eA-ZSp" firstAttribute="leading" secondItem="HAa-DT-YoV" secondAttribute="leading" constant="16" id="8gR-Fn-ocd"/>
+                            <constraint firstItem="bhx-eA-ZSp" firstAttribute="top" secondItem="YT1-5j-Lod" secondAttribute="bottom" constant="8" id="97A-pY-98Z"/>
+                            <constraint firstItem="yO8-An-cjM" firstAttribute="top" secondItem="erf-ZB-kj1" secondAttribute="bottom" constant="8" id="Ato-rV-g2c"/>
+                            <constraint firstItem="YT1-5j-Lod" firstAttribute="top" secondItem="Skp-Es-BOW" secondAttribute="bottom" constant="19" id="EPf-wx-v7L"/>
+                            <constraint firstItem="HAa-DT-YoV" firstAttribute="trailing" secondItem="yO8-An-cjM" secondAttribute="trailing" constant="16" id="LmJ-Wc-MiZ"/>
+                            <constraint firstItem="erf-ZB-kj1" firstAttribute="leading" secondItem="HAa-DT-YoV" secondAttribute="leading" constant="16" id="Ojl-Dg-hop"/>
+                            <constraint firstItem="erf-ZB-kj1" firstAttribute="top" secondItem="bhx-eA-ZSp" secondAttribute="bottom" constant="8" id="Tdt-ux-oF8"/>
+                            <constraint firstItem="yO8-An-cjM" firstAttribute="leading" secondItem="HAa-DT-YoV" secondAttribute="leading" constant="16" id="g4o-w7-Qca"/>
+                            <constraint firstItem="Skp-Es-BOW" firstAttribute="leading" secondItem="HAa-DT-YoV" secondAttribute="leading" id="hqv-cG-FMM"/>
+                            <constraint firstItem="HAa-DT-YoV" firstAttribute="trailing" secondItem="bhx-eA-ZSp" secondAttribute="trailing" constant="16" id="mHC-6Q-keO"/>
+                            <constraint firstItem="YT1-5j-Lod" firstAttribute="leading" secondItem="HAa-DT-YoV" secondAttribute="leading" constant="16" id="uBe-cE-035"/>
+                            <constraint firstItem="Skp-Es-BOW" firstAttribute="top" secondItem="HAa-DT-YoV" secondAttribute="top" id="uNu-jK-d2j"/>
+                            <constraint firstItem="HAa-DT-YoV" firstAttribute="trailing" secondItem="Skp-Es-BOW" secondAttribute="trailing" id="xBw-VG-R2p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HAa-DT-YoV"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="yO8-An-cjM" id="6Rf-N5-YZv"/>
+                        <outlet property="imageImageView" destination="Skp-Es-BOW" id="lfh-AD-9Ge"/>
+                        <outlet property="infoLabel" destination="bhx-eA-ZSp" id="T2R-gt-pnC"/>
+                        <outlet property="nameLabel" destination="YT1-5j-Lod" id="GzT-ak-D9o"/>
+                        <outlet property="openingHoursLabel" destination="erf-ZB-kj1" id="1I6-aK-v1h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qrH-vX-viX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.5999999999999" y="114.69265367316342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nrf-s2-kf6">
