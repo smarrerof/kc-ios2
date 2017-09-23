@@ -8,15 +8,21 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 class ShopsViewController: UIViewController {
 
+    @IBOutlet weak var shopsMapView: MKMapView!
     @IBOutlet weak var shopsTableView: UITableView!
     
     var context: NSManagedObjectContext!
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // GPS access from user
+        self.locationManager.requestWhenInUseAuthorization()
         
         ExecuteOnceInteractorImpl().execute {
             initializeData()
@@ -24,6 +30,33 @@ class ShopsViewController: UIViewController {
         
         self.shopsTableView.delegate = self
         self.shopsTableView.dataSource = self
+        
+        // Map behaviour
+        
+        // Center map
+        let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
+        self.shopsMapView.setCenter(madridLocation.coordinate, animated: true)
+        
+        // Set region 
+        let coordinateRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        let regionThatFits = self.shopsMapView.regionThatFits(coordinateRegion)
+        self.shopsMapView.setRegion(regionThatFits, animated: true)
+        
+        // Add note
+        /*let shopEntity = fetchedResultsController.fetchedObjects?.first
+        if (shopEntity != nil) {
+            let shopLocation = CLLocation(latitude: Double(shopEntity!.latitude), longitude: Double(shopEntity!.longitude))
+            let shopAnnotation = ShopAnnotation(coordinate: shopLocation.coordinate, title: shopEntity!.name!, subtitle: shopEntity!.address!)
+            self.shopsMapView.addAnnotation(shopAnnotation)
+        }*/
+        
+        if let fetchedObjects = fetchedResultsController.fetchedObjects {
+            for shopEntity in fetchedObjects {
+                let shopLocation = CLLocation(latitude: Double(shopEntity.latitude), longitude: Double(shopEntity.longitude))
+                let shopAnnotation = ShopAnnotation(coordinate: shopLocation.coordinate, title: shopEntity.name!, subtitle: shopEntity.address!)
+                self.shopsMapView.addAnnotation(shopAnnotation)
+            }
+        }
     }
     
     func initializeData() {

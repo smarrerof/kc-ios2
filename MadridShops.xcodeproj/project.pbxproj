@@ -17,6 +17,8 @@
 		4985D0151F7676DA00C9A731 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0141F7676DA00C9A731 /* ShopDetailViewController.swift */; };
 		4985D0171F76850300C9A731 /* DownloadAllShopsInteractorNSUrlSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0161F76850300C9A731 /* DownloadAllShopsInteractorNSUrlSessionImpl.swift */; };
 		4985D01A1F76862A00C9A731 /* JsonParseShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0191F76862A00C9A731 /* JsonParseShop.swift */; };
+		4985D01C1F768D8C00C9A731 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4985D01B1F768D8C00C9A731 /* MapKit.framework */; };
+		4985D01E1F76923D00C9A731 /* ShopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D01D1F76923D00C9A731 /* ShopAnnotation.swift */; };
 		49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2CAB91F71068F00FBC491 /* AppDelegate.swift */; };
 		49D2CABC1F71068F00FBC491 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2CABB1F71068F00FBC491 /* MainViewController.swift */; };
 		49D2CABF1F71068F00FBC491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D2CABD1F71068F00FBC491 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		4985D0141F7676DA00C9A731 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		4985D0161F76850300C9A731 /* DownloadAllShopsInteractorNSUrlSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorNSUrlSessionImpl.swift; sourceTree = "<group>"; };
 		4985D0191F76862A00C9A731 /* JsonParseShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParseShop.swift; sourceTree = "<group>"; };
+		4985D01B1F768D8C00C9A731 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4985D01D1F76923D00C9A731 /* ShopAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAnnotation.swift; sourceTree = "<group>"; };
 		49D2CAB61F71068F00FBC491 /* MadridShops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadridShops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D2CAB91F71068F00FBC491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D2CABB1F71068F00FBC491 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4985D01C1F768D8C00C9A731 /* MapKit.framework in Frameworks */,
 				49E6100D1F74FE93001BCBE6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +184,7 @@
 			children = (
 				49D2CABD1F71068F00FBC491 /* Main.storyboard */,
 				49D2CAC21F71068F00FBC491 /* LaunchScreen.storyboard */,
+				4985D01D1F76923D00C9A731 /* ShopAnnotation.swift */,
 				49E60FFD1F74035E001BCBE6 /* ShopCell.swift */,
 			);
 			path = Views;
@@ -232,6 +238,7 @@
 		49E6100B1F74FE91001BCBE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4985D01B1F768D8C00C9A731 /* MapKit.framework */,
 				49E6100C1F74FE92001BCBE6 /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -363,6 +370,7 @@
 				4985D0171F76850300C9A731 /* DownloadAllShopsInteractorNSUrlSessionImpl.swift in Sources */,
 				4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */,
 				49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */,
+				4985D01E1F76923D00C9A731 /* ShopAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -504,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -517,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M7WLKM5UY;
 				INFOPLIST_FILE = MadridShops/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiomarrero.MadridShops;
@@ -531,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M7WLKM5UY;
 				INFOPLIST_FILE = MadridShops/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiomarrero.MadridShops;

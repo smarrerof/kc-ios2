@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xgK-6S-Eap">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgK-6S-Eap">
                                 <rect key="frame" x="0.0" y="64" width="375" height="301.5"/>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-Fx-IhM">
@@ -107,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="GWa-mD-PyH"/>
                     </view>
                     <connections>
+                        <outlet property="shopsMapView" destination="xgK-6S-Eap" id="OGA-Wy-wJM"/>
                         <outlet property="shopsTableView" destination="3SD-Fx-IhM" id="BLM-pK-zf7"/>
                         <segue destination="SM3-gi-QnH" kind="show" identifier="ShowShopDetailSegue" id="ZTU-aX-5VR"/>
                     </connections>
