@@ -18,7 +18,12 @@ class ShopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeData()
+        ExecuteOnceInteractorImpl().execute {
+            initializeData()
+        }
+        
+        self.shopsTableView.delegate = self
+        self.shopsTableView.dataSource = self
     }
     
     func initializeData() {
@@ -26,8 +31,12 @@ class ShopsViewController: UIViewController {
         downloadAllShopsInteractor.execute { (shops: Shops) in
             let saveAllShopsInteractor = SaveAllShopsInteractorImpl()
             saveAllShopsInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
+                SetExecutedOnceInteractorImpl().execute()
+                
+                self._fetchedResultsController = nil
                 self.shopsTableView.delegate = self
                 self.shopsTableView.dataSource = self
+                self.shopsTableView.reloadData()
             })
         }
     }
