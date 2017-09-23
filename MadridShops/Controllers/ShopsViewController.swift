@@ -27,7 +27,7 @@ class ShopsViewController: UIViewController {
     }
     
     func initializeData() {
-        let downloadAllShopsInteractor = DownloadAllShopsInteractorFakeImpl()
+        let downloadAllShopsInteractor = DownloadAllShopsInteractorNSUrlSessionImpl()
         downloadAllShopsInteractor.execute { (shops: Shops) in
             let saveAllShopsInteractor = SaveAllShopsInteractorImpl()
             saveAllShopsInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
