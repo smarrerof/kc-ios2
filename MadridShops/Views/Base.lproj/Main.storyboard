@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,8 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-OM-YOf">
-                                <rect key="frame" x="160" y="318.5" width="55" height="30"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tsB-Ih-ty8">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-OM-YOf">
+                                <rect key="frame" x="160" y="98" width="55" height="30"/>
                                 <state key="normal" title="Tiendas"/>
                                 <connections>
                                     <segue destination="g0d-Bj-3UD" kind="show" identifier="ShowShopsSegue" id="6Vx-jB-Pic"/>
@@ -28,12 +32,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4mZ-OM-YOf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3iM-Tj-joT"/>
-                            <constraint firstItem="4mZ-OM-YOf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wRE-cK-1eA"/>
+                            <constraint firstItem="tsB-Ih-ty8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QyB-z1-8HN"/>
+                            <constraint firstItem="4mZ-OM-YOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="X9h-Lg-myu"/>
+                            <constraint firstItem="4mZ-OM-YOf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tDr-An-5Dk"/>
+                            <constraint firstItem="tsB-Ih-ty8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4N-1b-eRm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="¡MAD!" id="LBT-bU-JoG"/>
+                    <connections>
+                        <outlet property="loadingActivityIndicatorView" destination="tsB-Ih-ty8" id="qYL-no-9b7"/>
+                        <outlet property="shopsButton" destination="4mZ-OM-YOf" id="NxV-uo-c5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

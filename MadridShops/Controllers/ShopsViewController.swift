@@ -24,10 +24,7 @@ class ShopsViewController: UIViewController {
         // GPS access from user
         self.locationManager.requestWhenInUseAuthorization()
         
-        ExecuteOnceInteractorImpl().execute {
-            initializeData()
-        }
-        
+        // Set shopsTableView delegates to display shop list
         self.shopsTableView.delegate = self
         self.shopsTableView.dataSource = self
         
@@ -56,21 +53,6 @@ class ShopsViewController: UIViewController {
                 let shopAnnotation = ShopAnnotation(coordinate: shopLocation.coordinate, title: shopEntity.name!, subtitle: shopEntity.address!)
                 self.shopsMapView.addAnnotation(shopAnnotation)
             }
-        }
-    }
-    
-    func initializeData() {
-        let downloadAllShopsInteractor = DownloadAllShopsInteractorNSUrlSessionImpl()
-        downloadAllShopsInteractor.execute { (shops: Shops) in
-            let saveAllShopsInteractor = SaveAllShopsInteractorImpl()
-            saveAllShopsInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
-                SetExecutedOnceInteractorImpl().execute()
-                
-                self._fetchedResultsController = nil
-                self.shopsTableView.delegate = self
-                self.shopsTableView.dataSource = self
-                self.shopsTableView.reloadData()
-            })
         }
     }
     
