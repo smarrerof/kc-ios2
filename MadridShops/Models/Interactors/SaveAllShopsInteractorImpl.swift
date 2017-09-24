@@ -16,8 +16,6 @@ class SaveAllShopsInteractorImpl: SaveAllShopsInteractor {
     func execute(shops: Shops, context: NSManagedObjectContext, onSuccess: @escaping shopsSuccessClosure, onError: errorClosure) {
         for i in 0 ..< shops.count() {
             let shop = shops.get(index: i)
-            // Download logo
-            // Download image
             let _ = mapShopIntoShopEntity(context: context, shop: shop)
         }
         

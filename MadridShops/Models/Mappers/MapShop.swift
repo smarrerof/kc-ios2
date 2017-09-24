@@ -16,10 +16,12 @@ func mapShopIntoShopEntity(context: NSManagedObjectContext, shop: Shop) -> ShopE
     shopEntity.info = shop.info
     shopEntity.latitude = shop.latitude ?? 0.0
     shopEntity.longitude = shop.longitude ?? 0.0
-    shopEntity.image = shop.image
     shopEntity.logo = shop.logo
+    shopEntity.logoData = shop.logoData
+    shopEntity.image = shop.image
+    shopEntity.imageData = shop.imageData
     shopEntity.openingHours = shop.openingHours
-    
+
     return shopEntity
 }
 
@@ -29,8 +31,10 @@ func mapShopEntityIntoShop(shopEntity: ShopEntity) -> Shop {
     shop.info = shopEntity.info ?? ""
     shop.latitude = shopEntity.latitude
     shop.longitude = shopEntity.longitude
-    shop.image = shopEntity.image ?? ""
     shop.logo = shopEntity.logo ?? ""
+    shop.logoData = shopEntity.logoData
+    shop.image = shopEntity.image ?? ""
+    shop.imageData = shopEntity.imageData
     shop.openingHours = shopEntity.openingHours ?? ""
     
     return shop

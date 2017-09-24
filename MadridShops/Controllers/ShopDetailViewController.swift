@@ -22,7 +22,10 @@ class ShopDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = shop.name
-        self.shop.image.loadImage(into: self.imageImageView)
+        //self.shop.image.loadImage(into: self.imageImageView)
+        if let imageData = shop.imageData {
+            self.imageImageView.image = UIImage(data: imageData)
+        }
         self.nameLabel.text = self.shop.name
         self.infoLabel.text = self.shop.info
         self.infoLabel.sizeToFit()
