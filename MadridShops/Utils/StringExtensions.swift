@@ -22,4 +22,23 @@ extension String {
             }
         }
     }
+    
+    func downloadImage() -> Data? {
+        if let encodedUrl = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            if let url = URL(string: encodedUrl) {
+                if let data = NSData(contentsOf: url) {
+                    return data as Data
+                } else {
+                    print("There was a problem downloading the image url \(self) encoded as \(encodedUrl)")
+                }
+            }
+            else {
+                print("There was a problem parsing the image url \(self) encoded as \(encodedUrl)")
+            }
+        } else {
+            print("There was a problem encoding the image url \(self)")
+        }
+        
+        return nil
+    }
 }
