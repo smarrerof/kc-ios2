@@ -12,6 +12,7 @@ class ShopCell: UITableViewCell {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var openingHoursLabel: UILabel!
     
     var shop: Shop?
     
@@ -23,5 +24,6 @@ class ShopCell: UITableViewCell {
             self.logoImageView.image = UIImage(data: logoData)
         }
         self.nameLabel.text = shop.name
+        self.openingHoursLabel.text = shop.openingHours
     }
 }
