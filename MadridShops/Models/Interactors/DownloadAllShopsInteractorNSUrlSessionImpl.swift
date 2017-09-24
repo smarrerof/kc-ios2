@@ -27,9 +27,22 @@ class DownloadAllShopsInteractorNSUrlSessionImpl: DownloadAllShopsInteractor {
                     let shop = shops.get(index: i)
                     if let url = URL(string: shop.logo), let logoData = NSData(contentsOf: url) {
                         shop.logoData = logoData as Data
+                    } else {
+                        print("\(shop.description), there was a problem problem with image \(shop.logo)")
                     }
+                    
                     if let url = URL(string: shop.image), let imageData = NSData(contentsOf: url) {
                         shop.imageData = imageData as Data
+                    } else {
+                        print("\(shop.description), there was a problem problem with image \(shop.image))")
+                    }
+                    
+                    // https://maps.googleapis.com/maps/api/staticmap?center=40.452048,-3.686463&zoom=17&size=375x150
+                    let mapUrl = "https://maps.googleapis.com/maps/api/staticmap?center=\(shop.latitude!),\(shop.longitude!)&zoom=17&size=375x150"
+                    if let url = URL(string: mapUrl), let mapData = NSData(contentsOf: url) {
+                        shop.mapData = mapData as Data
+                    } else {
+                        print("\(shop.description), there was a problem problem with image \(mapUrl)")
                     }
                 }
                 

@@ -19,6 +19,7 @@ public class Shop {
     var image: String = ""
     var imageData: Data?
     var openingHours: String = ""
+    var mapData: Data?
     
     public init(name: String, address: String) {
         (self.name, self.address) = (name, address)

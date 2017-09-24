@@ -21,6 +21,7 @@ func mapShopIntoShopEntity(context: NSManagedObjectContext, shop: Shop) -> ShopE
     shopEntity.image = shop.image
     shopEntity.imageData = shop.imageData
     shopEntity.openingHours = shop.openingHours
+    shopEntity.mapData = shop.mapData
 
     return shopEntity
 }
@@ -36,6 +37,7 @@ func mapShopEntityIntoShop(shopEntity: ShopEntity) -> Shop {
     shop.image = shopEntity.image ?? ""
     shop.imageData = shopEntity.imageData
     shop.openingHours = shopEntity.openingHours ?? ""
+    shop.mapData = shopEntity.mapData
     
     return shop
 }
