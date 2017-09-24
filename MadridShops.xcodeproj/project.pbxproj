@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49477E281F77D8E0005001AB /* ConnectivityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49477E271F77D8E0005001AB /* ConnectivityHelper.swift */; };
 		4985D0051F75299800C9A731 /* SaveAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */; };
 		4985D0071F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */; };
 		4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0091F752DF900C9A731 /* MapShop.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49477E271F77D8E0005001AB /* ConnectivityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityHelper.swift; sourceTree = "<group>"; };
 		4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractor.swift; sourceTree = "<group>"; };
 		4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractorImpl.swift; sourceTree = "<group>"; };
 		4985D0091F752DF900C9A731 /* MapShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShop.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				49E610001F740537001BCBE6 /* StringExtensions.swift */,
 				49E610091F74FE19001BCBE6 /* CoreDataStack.swift */,
+				49477E271F77D8E0005001AB /* ConnectivityHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				4985D0051F75299800C9A731 /* SaveAllShopsInteractor.swift in Sources */,
 				49E610031F740A2C001BCBE6 /* ShopsViewController.swift in Sources */,
 				49E610081F74FBDF001BCBE6 /* MadridShops.xcdatamodeld in Sources */,
+				49477E281F77D8E0005001AB /* ConnectivityHelper.swift in Sources */,
 				4985D0111F766AEB00C9A731 /* ExecuteOnceInteractorImpl.swift in Sources */,
 				4985D0171F76850300C9A731 /* DownloadAllShopsInteractorNSUrlSessionImpl.swift in Sources */,
 				4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */,
