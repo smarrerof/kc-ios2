@@ -47,10 +47,13 @@ class ShopsViewController: UIViewController {
             self.shopsMapView.addAnnotation(shopAnnotation)
         }*/
         
+        self.shopsMapView.delegate = self
         if let fetchedObjects = fetchedResultsController.fetchedObjects {
             for shopEntity in fetchedObjects {
-                let shopLocation = CLLocation(latitude: Double(shopEntity.latitude), longitude: Double(shopEntity.longitude))
+                /*let shopLocation = CLLocation(latitude: Double(shopEntity.latitude), longitude: Double(shopEntity.longitude))
                 let shopAnnotation = ShopAnnotation(coordinate: shopLocation.coordinate, title: shopEntity.name!, subtitle: shopEntity.address!)
+                self.shopsMapView.addAnnotation(shopAnnotation)*/
+                let shopAnnotation = ShopAnnotation(shopEntity: shopEntity)
                 self.shopsMapView.addAnnotation(shopAnnotation)
             }
         }
@@ -124,5 +127,37 @@ extension ShopsViewController: UITableViewDelegate, UITableViewDataSource {
         let shopEntity: ShopEntity = fetchedResultsController.object(at: indexPath)
         cell.refresh(shop: mapShopEntityIntoShop(shopEntity: shopEntity))
         return cell
+    }
+}
+
+extension ShopsViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? ShopAnnotation else { return nil }
+        
+        let identifier = "marker"
+        var view: MKPinAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            
+            if let logoData = annotation.shopEntity.logoData {
+                let mapsButtom = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30)))
+                mapsButtom.setBackgroundImage(UIImage(data: logoData), for: UIControlState())
+                view.rightCalloutAccessoryView = mapsButtom
+            } else {
+                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            }
+        }
+        return view
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation = view.annotation as? ShopAnnotation  {
+            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
+        }
     }
 }

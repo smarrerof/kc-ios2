@@ -10,13 +10,27 @@ import Foundation
 import MapKit
 
 class ShopAnnotation: NSObject, MKAnnotation {
-    var coordinate: CLLocationCoordinate2D
-    var title: String?
-    var subtitle: String?
+    var shopEntity: ShopEntity
     
-    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+    var coordinate: CLLocationCoordinate2D {
+        let shopLocation = CLLocation(latitude: Double(shopEntity.latitude), longitude: Double(shopEntity.longitude))
+        return shopLocation.coordinate
+    }
+    
+    var title: String? {
+        return shopEntity.name
+    }
+    var subtitle: String? {
+        return shopEntity.address
+    }
+    
+    init(shopEntity: ShopEntity) {
+      self.shopEntity = shopEntity
+    }
+    
+    /*init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
-    }
+    }*/
 }
