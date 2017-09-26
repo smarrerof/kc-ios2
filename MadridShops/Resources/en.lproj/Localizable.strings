@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MadridShops
+
+  Created by Sergio Marrero Fernandez on 9/26/17.
+  Copyright © 2017 Sergio Marrero. All rights reserved.
+*/
+
+ShopsViewControllerTitle = "Shops";
+
+NetworkErrorTitle = "Ups, it seems that something goes wrong";
+NetworkErrorText = "It seems that there is no internet connectivity. Please, close the application and re-launch when the problem is solved";

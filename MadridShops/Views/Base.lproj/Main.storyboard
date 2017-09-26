@@ -23,17 +23,23 @@
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-OM-YOf">
-                                <rect key="frame" x="160" y="98" width="55" height="30"/>
-                                <state key="normal" title="Tiendas"/>
+                                <rect key="frame" x="166" y="98" width="44" height="30"/>
+                                <state key="normal" title="Shops"/>
                                 <connections>
                                     <segue destination="g0d-Bj-3UD" kind="show" identifier="ShowShopsSegue" id="6Vx-jB-Pic"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-ZG-uhf">
+                                <rect key="frame" x="156" y="136" width="63" height="30"/>
+                                <state key="normal" title="Activities"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tsB-Ih-ty8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QyB-z1-8HN"/>
                             <constraint firstItem="4mZ-OM-YOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="X9h-Lg-myu"/>
+                            <constraint firstItem="a1I-ZG-uhf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YrP-Le-hUm"/>
+                            <constraint firstItem="a1I-ZG-uhf" firstAttribute="top" secondItem="4mZ-OM-YOf" secondAttribute="bottom" constant="8" id="aHV-DW-zQl"/>
                             <constraint firstItem="4mZ-OM-YOf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tDr-An-5Dk"/>
                             <constraint firstItem="tsB-Ih-ty8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4N-1b-eRm"/>
                         </constraints>

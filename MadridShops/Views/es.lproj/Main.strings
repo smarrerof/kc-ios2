@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1rH-6M-9xI"; */
+"1rH-6M-9xI.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Shops"; ObjectID = "4mZ-OM-YOf"; */
+"4mZ-OM-YOf.normalTitle" = "Tiendas";
+
+/* Class = "UINavigationItem"; title = "¡MAD!"; ObjectID = "LBT-bU-JoG"; */
+"LBT-bU-JoG.title" = "¡MAD!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MwV-H8-XJz"; */
+"MwV-H8-XJz.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YT1-5j-Lod"; */
+"YT1-5j-Lod.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Activities"; ObjectID = "a1I-ZG-uhf"; */
+"a1I-ZG-uhf.normalTitle" = "Actividades";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bhx-eA-ZSp"; */
+"bhx-eA-ZSp.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "erf-ZB-kj1"; */
+"erf-ZB-kj1.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yO8-An-cjM"; */
+"yO8-An-cjM.text" = "Label";

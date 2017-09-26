@@ -21,6 +21,8 @@ class ShopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = NSLocalizedString("ShopsViewControllerTitle", comment: "ShopsViewControllerTitle")
+        
         // GPS access from user
         self.locationManager.requestWhenInUseAuthorization()
         

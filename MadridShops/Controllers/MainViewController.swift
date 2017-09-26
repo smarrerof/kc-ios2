@@ -49,8 +49,8 @@ class MainViewController: UIViewController {
     }
     
     func showAlert() {
-        let alertController = UIAlertController(title: "Ups, algo fue mal", message:
-            "Parece que no hay conectividad a internet. Cierra la aplicación y vuelve a lanzarla cuando se hay solucionado el problema. ", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: NSLocalizedString("NetworkErrorTitle", comment: "NetworkErrorTitle"), message:
+            NSLocalizedString("NetworkErrorText", comment: "NetworkErrorText"), preferredStyle: UIAlertControllerStyle.alert)
         
         alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.default, handler: nil))
         

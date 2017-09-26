@@ -13,14 +13,16 @@ func mapShopIntoShopEntity(context: NSManagedObjectContext, shop: Shop) -> ShopE
     
     shopEntity.name = shop.name
     shopEntity.address = shop.address
-    shopEntity.info = shop.info
+    shopEntity.info_en = shop.info_en
+    shopEntity.info_es = shop.info_es
     shopEntity.latitude = shop.latitude ?? 0.0
     shopEntity.longitude = shop.longitude ?? 0.0
     shopEntity.logo = shop.logo
     shopEntity.logoData = shop.logoData
     shopEntity.image = shop.image
     shopEntity.imageData = shop.imageData
-    shopEntity.openingHours = shop.openingHours
+    shopEntity.openingHours_en = shop.openingHours_en
+    shopEntity.openingHours_es = shop.openingHours_es
     shopEntity.mapData = shop.mapData
 
     return shopEntity
@@ -29,14 +31,16 @@ func mapShopIntoShopEntity(context: NSManagedObjectContext, shop: Shop) -> ShopE
 func mapShopEntityIntoShop(shopEntity: ShopEntity) -> Shop {
     let shop = Shop(name: shopEntity.name ?? "", address: shopEntity.address ?? "")
 
-    shop.info = shopEntity.info ?? ""
+    shop.info_en = shopEntity.info_en ?? ""
+    shop.info_es = shopEntity.info_es ?? ""
     shop.latitude = shopEntity.latitude
     shop.longitude = shopEntity.longitude
     shop.logo = shopEntity.logo ?? ""
     shop.logoData = shopEntity.logoData
     shop.image = shopEntity.image ?? ""
     shop.imageData = shopEntity.imageData
-    shop.openingHours = shopEntity.openingHours ?? ""
+    shop.openingHours_en = shopEntity.openingHours_en ?? ""
+    shop.openingHours_es = shopEntity.openingHours_es ?? ""
     shop.mapData = shopEntity.mapData
     
     return shop
