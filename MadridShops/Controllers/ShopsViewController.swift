@@ -145,6 +145,7 @@ extension ShopsViewController: MKMapViewDelegate {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.isUserInteractionEnabled = true
             
             if let logoData = annotation.shopEntity.logoData {
                 let mapsButtom = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30)))
@@ -156,9 +157,29 @@ extension ShopsViewController: MKMapViewDelegate {
         }
         return view
     }
-
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let annotation = view.annotation as? ShopAnnotation  {
+            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        print("didDeselect")
+        
+        view.gestureRecognizers?.removeAll()
+    }
+    
+    @objc func calloutTapped(sender: UITapGestureRecognizer) {
+        if let view = sender.view as? MKPinAnnotationView, let annotation = view.annotation as? ShopAnnotation {
+            print("calloutTapped")
             self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
         }
     }
