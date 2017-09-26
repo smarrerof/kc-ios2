@@ -20,28 +20,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tsB-Ih-ty8">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <rect key="frame" x="178" y="323" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mZ-OM-YOf">
-                                <rect key="frame" x="166" y="98" width="44" height="30"/>
+                                <rect key="frame" x="166" y="206" width="44" height="30"/>
                                 <state key="normal" title="Shops"/>
                                 <connections>
                                     <segue destination="g0d-Bj-3UD" kind="show" identifier="ShowShopsSegue" id="6Vx-jB-Pic"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-ZG-uhf">
-                                <rect key="frame" x="156" y="136" width="63" height="30"/>
+                                <rect key="frame" x="156" y="244" width="63" height="30"/>
                                 <state key="normal" title="Activities"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madrid.png" translatesAutoresizingMaskIntoConstraints="NO" id="TXb-gX-STD">
+                                <rect key="frame" x="16" y="80" width="343" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="U6g-Mx-GjH"/>
+                                    <constraint firstAttribute="height" constant="95" id="dcw-hB-SNB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Qv-V0-gfX"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="Asz-sW-3cu"/>
+                            <constraint firstItem="4mZ-OM-YOf" firstAttribute="top" secondItem="TXb-gX-STD" secondAttribute="bottom" constant="31" id="C9g-1l-MY7"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="E6a-RD-WRR"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="FTc-5g-nVf"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="centerX" secondItem="a1I-ZG-uhf" secondAttribute="centerX" id="JYc-ef-gfG"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="Lgn-6j-ul3"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="OUK-ps-Me1"/>
                             <constraint firstItem="tsB-Ih-ty8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QyB-z1-8HN"/>
-                            <constraint firstItem="4mZ-OM-YOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="X9h-Lg-myu"/>
                             <constraint firstItem="a1I-ZG-uhf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YrP-Le-hUm"/>
                             <constraint firstItem="a1I-ZG-uhf" firstAttribute="top" secondItem="4mZ-OM-YOf" secondAttribute="bottom" constant="8" id="aHV-DW-zQl"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fNq-3h-5kh"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fjK-DW-Pk6"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gwb-CC-1e1"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="centerX" secondItem="tsB-Ih-ty8" secondAttribute="centerX" id="oZB-ha-BYp"/>
+                            <constraint firstItem="TXb-gX-STD" firstAttribute="centerX" secondItem="4mZ-OM-YOf" secondAttribute="centerX" id="raf-Rb-vCg"/>
                             <constraint firstItem="4mZ-OM-YOf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tDr-An-5Dk"/>
                             <constraint firstItem="tsB-Ih-ty8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4N-1b-eRm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TXb-gX-STD" secondAttribute="trailing" constant="16" id="utu-NG-BqG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -234,4 +254,7 @@
             <point key="canvasLocation" x="-306" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="madrid.png" width="474" height="95"/>
+    </resources>
 </document>
