@@ -24,6 +24,8 @@ class ShopDetailViewController: UIViewController {
         self.title = shop.name
         if let mapData = shop.mapData {
             self.imageImageView.image = UIImage(data: mapData)
+        } else if let imageData = shop.imageData {
+            self.imageImageView.image = UIImage(data: imageData)
         }
         self.nameLabel.text = self.shop.name
         self.infoLabel.text = self.shop.info
