@@ -18,8 +18,6 @@ class ShopCell: UITableViewCell {
     
     func refresh(shop: Shop) {
         self.shop = shop
-        
-        //self.shop?.logo.loadImage(into: logoImageView)
         if let logoData = shop.logoData {
             self.logoImageView.image = UIImage(data: logoData)
         }

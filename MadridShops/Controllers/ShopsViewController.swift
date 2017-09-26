@@ -41,30 +41,17 @@ class ShopsViewController: UIViewController {
         let regionThatFits = self.shopsMapView.regionThatFits(coordinateRegion)
         self.shopsMapView.setRegion(regionThatFits, animated: true)
         
-        // Add note
-        /*let shopEntity = fetchedResultsController.fetchedObjects?.first
-        if (shopEntity != nil) {
-            let shopLocation = CLLocation(latitude: Double(shopEntity!.latitude), longitude: Double(shopEntity!.longitude))
-            let shopAnnotation = ShopAnnotation(coordinate: shopLocation.coordinate, title: shopEntity!.name!, subtitle: shopEntity!.address!)
-            self.shopsMapView.addAnnotation(shopAnnotation)
-        }*/
-        
+        // Add map annotations
         self.shopsMapView.delegate = self
         if let fetchedObjects = fetchedResultsController.fetchedObjects {
             for shopEntity in fetchedObjects {
-                /*let shopLocation = CLLocation(latitude: Double(shopEntity.latitude), longitude: Double(shopEntity.longitude))
-                let shopAnnotation = ShopAnnotation(coordinate: shopLocation.coordinate, title: shopEntity.name!, subtitle: shopEntity.address!)
-                self.shopsMapView.addAnnotation(shopAnnotation)*/
                 let shopAnnotation = ShopAnnotation(shopEntity: shopEntity)
                 self.shopsMapView.addAnnotation(shopAnnotation)
             }
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
-        self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: shopEntity)
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowShopDetailSegue" {
@@ -109,25 +96,24 @@ class ShopsViewController: UIViewController {
 }
 
 extension ShopsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
+        
+        self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: shopEntity)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /*if let shops = self.shops {
-            return shops.count()
-        }
-        return 0*/
-        
         let sectionInfo = fetchedResultsController.sections![section]
+        
         return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*let cell: ShopCell = shopsTableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopCell
-        let shop: Shop = (self.shops?.get(index: indexPath.row))!
-        cell.refresh(shop: shop)
-        return cell*/
         let cell: ShopCell = shopsTableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopCell
         let shopEntity: ShopEntity = fetchedResultsController.object(at: indexPath)
+        
         cell.refresh(shop: mapShopEntityIntoShop(shopEntity: shopEntity))
+        
         return cell
     }
 }
