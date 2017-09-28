@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var loadingActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var shopsButton: UIButton!
+    @IBOutlet weak var activitiesButton: UIButton!
     
     var context: NSManagedObjectContext!
     
@@ -23,12 +24,12 @@ class MainViewController: UIViewController {
             ExecuteOnceInteractorImpl().execute(onceClosure: {
                 initializeShopsData()
             }) {
-                updateUI()
+                self.setApplicationUI()
             }
         }
         else {
             showAlert()
-            loadingActivityIndicatorView.stopAnimating()
+            self.setNotConnectedUI()
         }
     }
     
@@ -37,15 +38,29 @@ class MainViewController: UIViewController {
         downloadAllShopsInteractor.execute { (shops: Shops) in
             let saveAllShopsInteractor = SaveAllShopsInteractorImpl()
             saveAllShopsInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
-                SetExecutedOnceInteractorImpl().execute()
-                self.updateUI()
+                self.initializeActivitiesData()
             })
         }
     }
     
-    func updateUI() {
+    func initializeActivitiesData() {
+        let downloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSUrlSessionImpl()
+        downloadAllActivitiesInteractor.execute { (activities: Activities) in
+            let saveAllActivitiesInteractor = SaveAllActivitiesInteractorImpl()
+            saveAllActivitiesInteractor.execute(activities: activities, context: self.context, onSuccess: { (activities: Activities) in
+                SetExecutedOnceInteractorImpl().execute()
+                self.setApplicationUI()
+            })
+        }
+    }
+    
+    func setNotConnectedUI() {
+        loadingActivityIndicatorView.stopAnimating()
+    }
+    func setApplicationUI() {
         loadingActivityIndicatorView.stopAnimating()
         shopsButton.isEnabled = true
+        activitiesButton.isEnabled = true
     }
     
     func showAlert() {

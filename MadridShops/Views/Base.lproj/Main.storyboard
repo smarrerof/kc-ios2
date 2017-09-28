@@ -29,7 +29,7 @@
                                     <segue destination="g0d-Bj-3UD" kind="show" identifier="ShowShopsSegue" id="6Vx-jB-Pic"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-ZG-uhf">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-ZG-uhf">
                                 <rect key="frame" x="156" y="244" width="63" height="30"/>
                                 <state key="normal" title="Activities"/>
                             </button>
@@ -67,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="¡MAD!" id="LBT-bU-JoG"/>
                     <connections>
+                        <outlet property="activitiesButton" destination="a1I-ZG-uhf" id="wUu-bo-kRI"/>
                         <outlet property="loadingActivityIndicatorView" destination="tsB-Ih-ty8" id="qYL-no-9b7"/>
                         <outlet property="shopsButton" destination="4mZ-OM-YOf" id="NxV-uo-c5A"/>
                     </connections>

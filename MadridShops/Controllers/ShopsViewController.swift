@@ -99,7 +99,7 @@ extension ShopsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
         
-        self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: shopEntity)
+        self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shopEntity)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
