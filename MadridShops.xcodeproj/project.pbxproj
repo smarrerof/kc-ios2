@@ -44,6 +44,8 @@
 		49D97B241F7DB49000EE11E1 /* ShopsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B231F7DB49000EE11E1 /* ShopsViewController+TableView.swift */; };
 		49D97B261F7DB50000EE11E1 /* ActivitiesViewController+MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B251F7DB50000EE11E1 /* ActivitiesViewController+MapView.swift */; };
 		49D97B281F7DB52600EE11E1 /* ShopsViewController+MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B271F7DB52600EE11E1 /* ShopsViewController+MapView.swift */; };
+		49D97B2A1F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B291F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift */; };
+		49D97B2C1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B2B1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift */; };
 		49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */; };
 		49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF21F71B239001BCBE6 /* Typealias.swift */; };
 		49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */; };
@@ -115,6 +117,8 @@
 		49D97B231F7DB49000EE11E1 /* ShopsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+TableView.swift"; sourceTree = "<group>"; };
 		49D97B251F7DB50000EE11E1 /* ActivitiesViewController+MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivitiesViewController+MapView.swift"; sourceTree = "<group>"; };
 		49D97B271F7DB52600EE11E1 /* ShopsViewController+MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+MapView.swift"; sourceTree = "<group>"; };
+		49D97B291F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntitiesFromCacheInteractorImpl.swift; sourceTree = "<group>"; };
+		49D97B2B1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntitiesFromCacheInteractor.swift; sourceTree = "<group>"; };
 		49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractor.swift; sourceTree = "<group>"; };
 		49E60FF21F71B239001BCBE6 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsProtocol.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 				4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */,
 				4985D0101F766AEB00C9A731 /* ExecuteOnceInteractorImpl.swift */,
 				4985D0121F766B3C00C9A731 /* SetExecutedOnceInteractorImpl.swift */,
+				49D97B291F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */,
 				4985D00B1F766AA000C9A731 /* ExecuteOnceInteractor.swift */,
 				4985D00E1F766AC300C9A731 /* SetExecutedOnceInteractor.swift */,
+				49D97B2B1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				4985D00F1F766AC300C9A731 /* SetExecutedOnceInteractor.swift in Sources */,
 				49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */,
 				4985D0131F766B3C00C9A731 /* SetExecutedOnceInteractorImpl.swift in Sources */,
+				49D97B2C1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift in Sources */,
 				49E6100A1F74FE19001BCBE6 /* CoreDataStack.swift in Sources */,
 				49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */,
 				49E60FFE1F74035F001BCBE6 /* ShopCell.swift in Sources */,
@@ -457,6 +464,7 @@
 				49D97B1C1F7DA66600EE11E1 /* EventAnnotation.swift in Sources */,
 				498AE4741F7D96EC00B9CD71 /* ActivitiesProtocol.swift in Sources */,
 				4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */,
+				49D97B2A1F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift in Sources */,
 				498AE46E1F7D950D00B9CD71 /* DownloadAllActivitiesInteractor.swift in Sources */,
 				49D97B201F7DB12000EE11E1 /* ActivityDetailViewController.swift in Sources */,
 				49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */,

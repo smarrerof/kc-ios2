@@ -17,11 +17,15 @@ class ShopsViewController: UIViewController {
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
+    var entities: GetEntitiesFromCacheInteractorImpl<ShopEntity>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = NSLocalizedString("ShopsViewControllerTitle", comment: "ShopsViewControllerTitle")
+        
+        // Data factory to get entities from cache
+        self.entities = GetEntitiesFromCacheInteractorImpl<ShopEntity>(key: "name", ascending: true, context: self.context, entityName: "ShopEntity")
         
         // GPS access from user
         self.locationManager.requestWhenInUseAuthorization()
@@ -43,7 +47,7 @@ class ShopsViewController: UIViewController {
         
         // Add map annotations
         self.shopsMapView.delegate = self
-        if let fetchedObjects = fetchedResultsController.fetchedObjects {
+        if let fetchedObjects = self.entities.fetchedResultsController.fetchedObjects {
             for shopEntity in fetchedObjects {
                 let shopAnnotation = ShopAnnotation(shopEntity: shopEntity)
                 self.shopsMapView.addAnnotation(shopAnnotation)
@@ -58,37 +62,5 @@ class ShopsViewController: UIViewController {
             let shopEntity: ShopEntity = sender as! ShopEntity
             shopDetailViewController.shop = mapShopEntityIntoShop(shopEntity: shopEntity)
         }
-    }
-    
-    // MARK: - Fetched results controller
-    var _fetchedResultsController: NSFetchedResultsController<ShopEntity>? = nil
-    
-    var fetchedResultsController: NSFetchedResultsController<ShopEntity> {
-        if (_fetchedResultsController != nil) {
-            return _fetchedResultsController!
-        }
-        
-        let fetchRequest: NSFetchRequest<ShopEntity> = ShopEntity.fetchRequest()
-        
-        // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 20
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-        // fetchRequest == SELECT * FROM shops ORDER BY name ASC
-        _fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: "ShopsCacheFile")
-        // aFetchedResultsController.delegate = self
-        
-        do {
-            try _fetchedResultsController!.performFetch()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-        
-        return _fetchedResultsController!
     }
 }

@@ -10,20 +10,20 @@ import UIKit
 
 extension ShopsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
+        let shopEntity: ShopEntity = self.entities.fetchedResultsController.object(at: indexPath)
         
         self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shopEntity)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = fetchedResultsController.sections![section]
+        let sectionInfo = self.entities.fetchedResultsController.sections![section]
         
         return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ShopCell = shopsTableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopCell
-        let shopEntity: ShopEntity = fetchedResultsController.object(at: indexPath)
+        let shopEntity: ShopEntity = self.entities.fetchedResultsController.object(at: indexPath)
         
         cell.refresh(shop: mapShopEntityIntoShop(shopEntity: shopEntity))
         
