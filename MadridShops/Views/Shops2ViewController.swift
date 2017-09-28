@@ -1,8 +1,8 @@
 //
-//  ShopsViewController.swift
+//  Shops2ViewController.swift
 //  MadridShops
 //
-//  Created by Sergio Marrero Fernandez on 9/21/17.
+//  Created by Sergio Marrero Fernandez on 9/28/17.
 //  Copyright © 2017 Sergio Marrero. All rights reserved.
 //
 
@@ -10,8 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 
-class ShopsViewController<T: BaseModel>: UIViewController {
-
+class Shops2ViewController<TModel, TEntity>: UIViewController where TModel: BaseModel, TEntity: NSManagedObject, TEntity: BaseEntity {
     @IBOutlet weak var shopsMapView: MKMapView!
     @IBOutlet weak var shopsTableView: UITableView!
     
@@ -23,67 +22,67 @@ class ShopsViewController<T: BaseModel>: UIViewController {
         
         self.title = NSLocalizedString("ShopsViewControllerTitle", comment: "ShopsViewControllerTitle")
         
+        // Create fetch result
+        let fetch = Shops2Fetch<TEntity>(context: self.context)
+        
         // GPS access from user
         self.locationManager.requestWhenInUseAuthorization()
         
         // Set shopsTableView delegates to display shop list
-        let k = ShopsTableViewController<T>(context: self.context, shopsTableView: self.shopsTableView)
+        self.shopsTableView.register(UINib(nibName: "Shop2ViewCell", bundle: nil), forCellReuseIdentifier: "Shop2Cell")
+        let k = Shops2TableView<TEntity>(viewController: self, fetch: fetch, shopsTableView: self.shopsTableView)
         self.shopsTableView.delegate = k
         self.shopsTableView.dataSource = k
+        
         
         // Map behaviour
         
         // Center map
-        /*let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
-        self.shopsMapView.setCenter(madridLocation.coordinate, animated: true)*/
+        let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
+        self.shopsMapView.setCenter(madridLocation.coordinate, animated: true)
         
-        // Set region 
-        /*let coordinateRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        // Set region
+        let coordinateRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         let regionThatFits = self.shopsMapView.regionThatFits(coordinateRegion)
-        self.shopsMapView.setRegion(regionThatFits, animated: true)*/
+        self.shopsMapView.setRegion(regionThatFits, animated: true)
         
         // Add map annotations
-        /*self.shopsMapView.delegate = self
-        if let fetchedObjects = fetchedResultsController.fetchedObjects {
-            for shopEntity in fetchedObjects {
-                let shopAnnotation = ShopAnnotation(shopEntity: shopEntity)
+        let l = Shops2Map<TEntity>(viewController: self)
+        self.shopsMapView.delegate = l
+        if let fetchedObjects = fetch.fetchedResultsController.fetchedObjects {
+            for entity in fetchedObjects {
+                let shopAnnotation = Shop2Annotation(shopEntity: entity)
                 self.shopsMapView.addAnnotation(shopAnnotation)
             }
-        }*/
+        }
+        
     }
     
-
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowShopDetailSegue" {
             let shopDetailViewController = segue.destination as! ShopDetailViewController
             
             let shopEntity: ShopEntity = sender as! ShopEntity
             shopDetailViewController.shop = mapShopEntityIntoShop(shopEntity: shopEntity)
         }
-    }
-    
-    
+    }*/
 }
 
-class ShopsTableViewController<T>: NSObject, UITableViewDelegate, UITableViewDataSource {
+class Shops2Fetch<TEntity>: NSObject where TEntity: NSManagedObject, TEntity: BaseEntity {
     var context: NSManagedObjectContext!
-    var shopsTableView: UITableView!
-    
-    init(context: NSManagedObjectContext, shopsTableView: UITableView) {
+    var _fetchedResultsController: NSFetchedResultsController<TEntity>? = nil
+
+    init(context: NSManagedObjectContext) {
         self.context = context
-        self.shopsTableView = shopsTableView
     }
     
     // MARK: - Fetched results controller
-    var _fetchedResultsController: NSFetchedResultsController<ShopEntity>? = nil
-    
-    var fetchedResultsController: NSFetchedResultsController<ShopEntity> {
+    var fetchedResultsController: NSFetchedResultsController<TEntity> {
         if (_fetchedResultsController != nil) {
             return _fetchedResultsController!
         }
         
-        let fetchRequest: NSFetchRequest<ShopEntity> = ShopEntity.fetchRequest()
+        let fetchRequest = NSFetchRequest<TEntity>(entityName: TEntity.entityName)
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
@@ -107,22 +106,38 @@ class ShopsTableViewController<T>: NSObject, UITableViewDelegate, UITableViewDat
         return _fetchedResultsController!
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class Shops2TableView<TEntity>: NSObject, UITableViewDelegate, UITableViewDataSource where TEntity: NSManagedObject, TEntity: BaseEntity {
+    var viewController: UIViewController
+    var fetch: Shops2Fetch<TEntity>
+    var shopsTableView: UITableView
+    
+    init(viewController: UIViewController, fetch: Shops2Fetch<TEntity>, shopsTableView: UITableView) {
+        self.viewController = viewController
+        self.fetch = fetch
+        self.shopsTableView = shopsTableView
+    }
+    
     // MARK: - tableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
+        let shopEntity: ShopEntity = self.fetch.fetchedResultsController.object(at: indexPath) as! ShopEntity
         
         //self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: shopEntity)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = fetchedResultsController.sections![section]
+        let sectionInfo = self.fetch.fetchedResultsController.sections![section]
         
         return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ShopCell = shopsTableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopCell
-        let shopEntity: ShopEntity = fetchedResultsController.object(at: indexPath)
+        let cell: Shop2ViewCell = shopsTableView.dequeueReusableCell(withIdentifier: "Shop2Cell", for: indexPath) as! Shop2ViewCell
+        let shopEntity: ShopEntity = self.fetch.fetchedResultsController.object(at: indexPath) as! ShopEntity
         
         cell.refresh(shop: mapShopEntityIntoShop(shopEntity: shopEntity))
         
@@ -134,9 +149,15 @@ class ShopsTableViewController<T>: NSObject, UITableViewDelegate, UITableViewDat
     }
 }
 
-/*extension ShopsViewController: MKMapViewDelegate {
+class Shops2Map<TEntity>: NSObject, MKMapViewDelegate where TEntity: NSManagedObject, TEntity: BaseEntity {
+    var viewController: UIViewController
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? ShopAnnotation else { return nil }
+        guard let annotation = annotation as? Shop2Annotation<TEntity> else { return nil }
         
         let identifier = "marker"
         var view: MKPinAnnotationView
@@ -160,11 +181,11 @@ class ShopsTableViewController<T>: NSObject, UITableViewDelegate, UITableViewDat
         return view
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    /*func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let annotation = view.annotation as? ShopAnnotation  {
             self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
         }
-    }
+    }*/
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped))
@@ -180,10 +201,13 @@ class ShopsTableViewController<T>: NSObject, UITableViewDelegate, UITableViewDat
     }
     
     @objc func calloutTapped(sender: UITapGestureRecognizer) {
-        if let view = sender.view as? MKPinAnnotationView, let annotation = view.annotation as? ShopAnnotation {
+        if let view = sender.view as? MKPinAnnotationView, let annotation = view.annotation as? Shop2Annotation<TEntity> {
             print("calloutTapped")
-            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
+            /*self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)*/
         }
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
-*/

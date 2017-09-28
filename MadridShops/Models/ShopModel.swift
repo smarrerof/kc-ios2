@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Shop {
+public class Shop: BaseModel {
     public var name: String
     var address: String = ""
     var info_en: String = ""

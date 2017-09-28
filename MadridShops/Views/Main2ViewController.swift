@@ -1,22 +1,22 @@
 //
-//  MainViewController.swift
+//  Main2ViewController.swift
 //  MadridShops
 //
-//  Created by Sergio Marrero Fernandez on 9/19/17.
+//  Created by Sergio Marrero Fernandez on 9/28/17.
 //  Copyright © 2017 Sergio Marrero. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class MainViewController: UIViewController {
+class Main2ViewController: UIViewController {
 
     @IBOutlet weak var loadingActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var shopsButton: UIButton!
-    
+    @IBOutlet weak var activitesButton: UIButton!
     
     @IBAction func shopsButtonTapped(_ sender: Any) {
-        let viewController = ShopsViewController<Shop>(nibName: "Main", bundle: nil)
+        let viewController = Shops2ViewController<Shop, ShopEntity>(nibName: "Shops2ViewController", bundle: nil)
         viewController.context = self.context
         self.navigationController?.pushViewController(viewController, animated: true)
     }
@@ -70,4 +70,5 @@ class MainViewController: UIViewController {
             shopsViewController.context = self.context
         }
     }
+
 }
