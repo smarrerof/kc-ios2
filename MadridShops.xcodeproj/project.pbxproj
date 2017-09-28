@@ -39,6 +39,7 @@
 		49D97B1A1F7DA5BF00EE11E1 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B191F7DA5BF00EE11E1 /* ActivitiesViewController.swift */; };
 		49D97B1C1F7DA66600EE11E1 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B1B1F7DA66600EE11E1 /* EventAnnotation.swift */; };
 		49D97B1E1F7DA73200EE11E1 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B1D1F7DA73200EE11E1 /* ActivityCell.swift */; };
+		49D97B201F7DB12000EE11E1 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B1F1F7DB12000EE11E1 /* ActivityDetailViewController.swift */; };
 		49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */; };
 		49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF21F71B239001BCBE6 /* Typealias.swift */; };
 		49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */; };
@@ -105,6 +106,7 @@
 		49D97B191F7DA5BF00EE11E1 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		49D97B1B1F7DA66600EE11E1 /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 		49D97B1D1F7DA73200EE11E1 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		49D97B1F1F7DB12000EE11E1 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractor.swift; sourceTree = "<group>"; };
 		49E60FF21F71B239001BCBE6 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsProtocol.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				49D2CABB1F71068F00FBC491 /* MainViewController.swift */,
 				49D97B191F7DA5BF00EE11E1 /* ActivitiesViewController.swift */,
+				49D97B1F1F7DB12000EE11E1 /* ActivityDetailViewController.swift */,
 				49E610021F740A2C001BCBE6 /* ShopsViewController.swift */,
 				4985D0141F7676DA00C9A731 /* ShopDetailViewController.swift */,
 			);
@@ -439,6 +442,7 @@
 				498AE4741F7D96EC00B9CD71 /* ActivitiesProtocol.swift in Sources */,
 				4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */,
 				498AE46E1F7D950D00B9CD71 /* DownloadAllActivitiesInteractor.swift in Sources */,
+				49D97B201F7DB12000EE11E1 /* ActivityDetailViewController.swift in Sources */,
 				49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */,
 				49D97B1E1F7DA73200EE11E1 /* ActivityCell.swift in Sources */,
 				498AE4701F7D955A00B9CD71 /* Activity.swift in Sources */,

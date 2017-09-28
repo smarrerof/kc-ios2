@@ -52,11 +52,11 @@ class ActivitiesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShopDetailSegue" {
-            let shopDetailViewController = segue.destination as! ShopDetailViewController
+        if segue.identifier == "ShowActivityDetailSegue" {
+            let activityDetailViewController = segue.destination as! ActivityDetailViewController
             
-            let shopEntity: ShopEntity = sender as! ShopEntity
-            shopDetailViewController.shop = mapShopEntityIntoShop(shopEntity: shopEntity)
+            let activityEntity: ActivityEntity = sender as! ActivityEntity
+            activityDetailViewController.activity = mapActivityEntityIntoActivity(activityEntity: activityEntity)
         }
     }
     
@@ -164,7 +164,7 @@ extension ActivitiesViewController: MKMapViewDelegate {
     @objc func calloutTapped(sender: UITapGestureRecognizer) {
         if let view = sender.view as? MKPinAnnotationView, let annotation = view.annotation as? ActivityAnnotation {
             print("calloutTapped")
-            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.activityEntity)
+            self.performSegue(withIdentifier: "ShowActivityDetailSegue" , sender: annotation.activityEntity)
         }
     }
 }
