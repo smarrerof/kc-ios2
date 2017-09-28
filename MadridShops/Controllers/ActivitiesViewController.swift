@@ -1,8 +1,8 @@
 //
-//  ShopsViewController.swift
+//  ActivitiesViewController.swift
 //  MadridShops
 //
-//  Created by Sergio Marrero Fernandez on 9/21/17.
+//  Created by Sergio Marrero Fernandez on 9/28/17.
 //  Copyright © 2017 Sergio Marrero. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 import MapKit
 
-class ShopsViewController: UIViewController {
-
-    @IBOutlet weak var shopsMapView: MKMapView!
-    @IBOutlet weak var shopsTableView: UITableView!
+class ActivitiesViewController: UIViewController {
+    
+    @IBOutlet weak var activitiesMapView: MKMapView!
+    @IBOutlet weak var activitiesTableView: UITableView!
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
@@ -21,32 +21,32 @@ class ShopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = NSLocalizedString("ShopsViewControllerTitle", comment: "ShopsViewControllerTitle")
+        self.title = NSLocalizedString("ActivitiesViewControllerTitle", comment: "ActivitiesViewControllerTitle")
         
         // GPS access from user
         self.locationManager.requestWhenInUseAuthorization()
         
         // Set shopsTableView delegates to display shop list
-        self.shopsTableView.delegate = self
-        self.shopsTableView.dataSource = self
+        self.activitiesTableView.delegate = self
+        self.activitiesTableView.dataSource = self
         
         // Map behaviour
         
         // Center map
         let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
-        self.shopsMapView.setCenter(madridLocation.coordinate, animated: true)
+        self.activitiesMapView.setCenter(madridLocation.coordinate, animated: true)
         
-        // Set region 
+        // Set region
         let coordinateRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
-        let regionThatFits = self.shopsMapView.regionThatFits(coordinateRegion)
-        self.shopsMapView.setRegion(regionThatFits, animated: true)
+        let regionThatFits = self.activitiesMapView.regionThatFits(coordinateRegion)
+        self.activitiesMapView.setRegion(regionThatFits, animated: true)
         
         // Add map annotations
-        self.shopsMapView.delegate = self
+        self.activitiesMapView.delegate = self
         if let fetchedObjects = fetchedResultsController.fetchedObjects {
-            for shopEntity in fetchedObjects {
-                let shopAnnotation = ShopAnnotation(shopEntity: shopEntity)
-                self.shopsMapView.addAnnotation(shopAnnotation)
+            for activityEntity in fetchedObjects {
+                let activityAnnotation = ActivityAnnotation(activityEntity: activityEntity)
+                self.activitiesMapView.addAnnotation(activityAnnotation)
             }
         }
     }
@@ -61,14 +61,14 @@ class ShopsViewController: UIViewController {
     }
     
     // MARK: - Fetched results controller
-    var _fetchedResultsController: NSFetchedResultsController<ShopEntity>? = nil
+    var _fetchedResultsController: NSFetchedResultsController<ActivityEntity>? = nil
     
-    var fetchedResultsController: NSFetchedResultsController<ShopEntity> {
+    var fetchedResultsController: NSFetchedResultsController<ActivityEntity> {
         if (_fetchedResultsController != nil) {
             return _fetchedResultsController!
         }
         
-        let fetchRequest: NSFetchRequest<ShopEntity> = ShopEntity.fetchRequest()
+        let fetchRequest: NSFetchRequest<ActivityEntity> = ActivityEntity.fetchRequest()
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
@@ -76,8 +76,8 @@ class ShopsViewController: UIViewController {
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
-        // fetchRequest == SELECT * FROM shops ORDER BY name ASC
-        _fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: "ShopsCacheFile")
+        // fetchRequest == SELECT * FROM activities ORDER BY name ASC
+        _fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: "ActivitiesCacheFile")
         // aFetchedResultsController.delegate = self
         
         do {
@@ -93,11 +93,11 @@ class ShopsViewController: UIViewController {
     }
 }
 
-extension ShopsViewController: UITableViewDelegate, UITableViewDataSource {
+extension ActivitiesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shopEntity: ShopEntity = self.fetchedResultsController.object(at: indexPath)
+        let activityEntity: ActivityEntity = self.fetchedResultsController.object(at: indexPath)
         
-        self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shopEntity)
+        self.performSegue(withIdentifier: "ShowActivityDetailSegue", sender: activityEntity)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,18 +107,18 @@ extension ShopsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ShopCell = shopsTableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopCell
-        let shopEntity: ShopEntity = fetchedResultsController.object(at: indexPath)
+        let cell: ActivityCell = activitiesTableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
+        let activityEntity: ActivityEntity = fetchedResultsController.object(at: indexPath)
         
-        cell.refresh(shop: mapShopEntityIntoShop(shopEntity: shopEntity))
+        cell.refresh(activity: mapActivityEntityIntoActivity(activityEntity: activityEntity))
         
         return cell
     }
 }
 
-extension ShopsViewController: MKMapViewDelegate {
+extension ActivitiesViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? ShopAnnotation else { return nil }
+        guard let annotation = annotation as? ActivityAnnotation else { return nil }
         
         let identifier = "marker"
         var view: MKPinAnnotationView
@@ -131,7 +131,7 @@ extension ShopsViewController: MKMapViewDelegate {
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.isUserInteractionEnabled = true
             
-            if let logoData = annotation.shopEntity.logoData {
+            if let logoData = annotation.activityEntity.logoData {
                 let mapsButtom = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30)))
                 mapsButtom.setBackgroundImage(UIImage(data: logoData), for: UIControlState())
                 view.rightCalloutAccessoryView = mapsButtom
@@ -143,8 +143,8 @@ extension ShopsViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if let annotation = view.annotation as? ShopAnnotation  {
-            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
+        if let annotation = view.annotation as? ActivityAnnotation  {
+            self.performSegue(withIdentifier: "ShowActivityDetailSegue" , sender: annotation.activityEntity)
         }
     }
     
@@ -162,9 +162,10 @@ extension ShopsViewController: MKMapViewDelegate {
     }
     
     @objc func calloutTapped(sender: UITapGestureRecognizer) {
-        if let view = sender.view as? MKPinAnnotationView, let annotation = view.annotation as? ShopAnnotation {
+        if let view = sender.view as? MKPinAnnotationView, let annotation = view.annotation as? ActivityAnnotation {
             print("calloutTapped")
-            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.shopEntity)
+            self.performSegue(withIdentifier: "ShowShopDetailSegue" , sender: annotation.activityEntity)
         }
     }
 }
+

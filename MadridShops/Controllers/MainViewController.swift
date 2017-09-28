@@ -77,5 +77,9 @@ class MainViewController: UIViewController {
             let shopsViewController = segue.destination as! ShopsViewController
             shopsViewController.context = self.context
         }
+        if segue.identifier == "ShowActivitiesSegue" {
+            let activitiesViewController = segue.destination as! ActivitiesViewController
+            activitiesViewController.context = self.context
+        }
     }
 }

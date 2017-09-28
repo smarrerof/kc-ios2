@@ -32,6 +32,9 @@
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-ZG-uhf">
                                 <rect key="frame" x="156" y="244" width="63" height="30"/>
                                 <state key="normal" title="Activities"/>
+                                <connections>
+                                    <segue destination="IKM-bb-Ouz" kind="show" identifier="ShowActivitiesSegue" id="Qox-WT-ng3"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madrid.png" translatesAutoresizingMaskIntoConstraints="NO" id="TXb-gX-STD">
                                 <rect key="frame" x="16" y="80" width="343" height="95"/>
@@ -101,7 +104,6 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQ7-8T-wsm">
                                                     <rect key="frame" x="8" y="0.0" width="69" height="69"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="THh-n7-l1l"/>
                                                         <constraint firstAttribute="height" constant="69" id="TzQ-Cm-AnA"/>
                                                         <constraint firstAttribute="width" constant="69" id="VYk-0u-hf6"/>
                                                     </constraints>
@@ -163,7 +165,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOn-cF-KfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186.4000000000001" y="114.69265367316342"/>
+            <point key="canvasLocation" x="1233" y="-76"/>
+        </scene>
+        <!--Activities View Controller-->
+        <scene sceneID="IId-Hk-vLj">
+            <objects>
+                <viewController id="IKM-bb-Ouz" customClass="ActivitiesViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eDv-Sc-J2B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dbO-cp-Eaz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="301.5"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ori-uf-HIn">
+                                <rect key="frame" x="0.0" y="365.5" width="375" height="301.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" rowHeight="69" id="rWZ-iB-esq" userLabel="ActivityCell" customClass="ActivityCell" customModule="MadridShops" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rWZ-iB-esq" id="IrK-nV-U1W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og2-LU-cCY">
+                                                    <rect key="frame" x="85" y="7" width="282" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmw-Mi-Cmm">
+                                                    <rect key="frame" x="85" y="39" width="282" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2uY-V3-SOa">
+                                                    <rect key="frame" x="8" y="0.0" width="69" height="69"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="69" id="0Ko-of-MY4"/>
+                                                        <constraint firstAttribute="width" constant="69" id="W16-Ik-abF"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cmw-Mi-Cmm" secondAttribute="trailing" constant="8" id="3Ki-qq-PfF"/>
+                                                <constraint firstAttribute="bottom" secondItem="cmw-Mi-Cmm" secondAttribute="bottom" constant="8.5" id="CWb-04-3y0"/>
+                                                <constraint firstItem="cmw-Mi-Cmm" firstAttribute="top" secondItem="Og2-LU-cCY" secondAttribute="bottom" constant="8" id="Dg2-3g-0ho"/>
+                                                <constraint firstItem="2uY-V3-SOa" firstAttribute="width" secondItem="IrK-nV-U1W" secondAttribute="width" constant="-306" id="HCv-z7-58I"/>
+                                                <constraint firstItem="2uY-V3-SOa" firstAttribute="height" secondItem="IrK-nV-U1W" secondAttribute="height" id="MCL-Q8-eaN"/>
+                                                <constraint firstAttribute="bottom" secondItem="2uY-V3-SOa" secondAttribute="bottom" constant="-0.5" id="R1B-p5-MBk"/>
+                                                <constraint firstItem="cmw-Mi-Cmm" firstAttribute="leading" secondItem="2uY-V3-SOa" secondAttribute="trailing" constant="8" id="VmQ-vV-yQW"/>
+                                                <constraint firstItem="Og2-LU-cCY" firstAttribute="leading" secondItem="2uY-V3-SOa" secondAttribute="trailing" constant="8" id="aFb-RC-ADb"/>
+                                                <constraint firstItem="Og2-LU-cCY" firstAttribute="top" secondItem="IrK-nV-U1W" secondAttribute="top" constant="7" id="cMx-I9-1Ci"/>
+                                                <constraint firstItem="2uY-V3-SOa" firstAttribute="leading" secondItem="IrK-nV-U1W" secondAttribute="leading" constant="8" id="rHe-pd-j2R"/>
+                                                <constraint firstAttribute="trailing" secondItem="Og2-LU-cCY" secondAttribute="trailing" constant="8" id="rTr-nE-JRt"/>
+                                                <constraint firstItem="2uY-V3-SOa" firstAttribute="top" secondItem="IrK-nV-U1W" secondAttribute="top" id="znf-bT-aT5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logoImageView" destination="2uY-V3-SOa" id="M2h-Fc-DSx"/>
+                                            <outlet property="nameLabel" destination="Og2-LU-cCY" id="I7F-AM-8Ny"/>
+                                            <outlet property="openingHoursLabel" destination="cmw-Mi-Cmm" id="hk3-wJ-BZu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2cv-bB-rwH" firstAttribute="trailing" secondItem="ori-uf-HIn" secondAttribute="trailing" id="00X-5t-42x"/>
+                            <constraint firstItem="ori-uf-HIn" firstAttribute="leading" secondItem="2cv-bB-rwH" secondAttribute="leading" id="2zK-e7-Ip5"/>
+                            <constraint firstItem="2cv-bB-rwH" firstAttribute="bottom" secondItem="ori-uf-HIn" secondAttribute="bottom" id="8yy-pl-B4E"/>
+                            <constraint firstItem="ori-uf-HIn" firstAttribute="height" secondItem="dbO-cp-Eaz" secondAttribute="height" id="DxJ-w0-sIx"/>
+                            <constraint firstItem="ori-uf-HIn" firstAttribute="top" secondItem="dbO-cp-Eaz" secondAttribute="bottom" id="Wen-oS-lrE"/>
+                            <constraint firstItem="2cv-bB-rwH" firstAttribute="trailing" secondItem="dbO-cp-Eaz" secondAttribute="trailing" id="n6T-Kj-FZV"/>
+                            <constraint firstItem="dbO-cp-Eaz" firstAttribute="leading" secondItem="2cv-bB-rwH" secondAttribute="leading" id="reQ-9R-ZT3"/>
+                            <constraint firstItem="dbO-cp-Eaz" firstAttribute="top" secondItem="2cv-bB-rwH" secondAttribute="top" id="wmp-8H-qmP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2cv-bB-rwH"/>
+                    </view>
+                    <connections>
+                        <outlet property="activitiesMapView" destination="dbO-cp-Eaz" id="u2m-Aj-tbN"/>
+                        <outlet property="activitiesTableView" destination="ori-uf-HIn" id="ZyD-UO-VFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4s-bB-lmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1240.8" y="588.75562218890559"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="Y5j-s4-01X">
@@ -234,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrH-vX-viX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973.5999999999999" y="114.69265367316342"/>
+            <point key="canvasLocation" x="1953" y="-76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nrf-s2-kf6">
