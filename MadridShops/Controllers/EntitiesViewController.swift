@@ -22,8 +22,6 @@ class EntitiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = NSLocalizedString("EventsViewControllerTitle", comment: "EventsViewControllerTitle")
-        
         // GPS access from user
         self.locationManager.requestWhenInUseAuthorization()
         
