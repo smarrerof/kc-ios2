@@ -6,8 +6,8 @@
   Copyright © 2017 Sergio Marrero. All rights reserved.
 */
 
-ShopsViewControllerTitle = "Shops";
-ActivitiesViewControllerTitle = "Activities";
+EntityShopsViewControllerTitle = "Shops";
+EntityAntivitiesViewControllerTitle = "Activities";
 
 NetworkErrorTitle = "Ups, it seems that something goes wrong";
 NetworkErrorText = "It seems that there is no internet connectivity. Please, close the application and re-launch when the problem is solved";

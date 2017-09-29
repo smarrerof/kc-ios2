@@ -94,24 +94,15 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShopsSegue" {
-            let shopsViewController = segue.destination as! ShopsViewController
-            shopsViewController.context = self.context
-        }
-        if segue.identifier == "ShowActivitiesSegue" {
-            let activitiesViewController = segue.destination as! ActivitiesViewController
-            activitiesViewController.context = self.context
-        }
-        
-        if segue.identifier == "ShowEventShopsSegue" {
+        if segue.identifier == "ShowEntityShopsSegue" {
             let entitiesViewController = segue.destination as! EntitiesViewController
-            entitiesViewController.title = NSLocalizedString("ShopsViewControllerTitle", comment: "ShopsViewControllerTitle")
+            entitiesViewController.title = NSLocalizedString("EntityShopsViewControllerTitle", comment: "EntityShopsViewControllerTitle")
             entitiesViewController.context = self.context
             entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<Entity>(key: "name", ascending: true, context: self.context, entityName: "ShopEntity")
         }
-        if segue.identifier == "ShowEventActivitiesSegue" {
+        if segue.identifier == "ShowEntityActivitiesSegue" {
             let entitiesViewController = segue.destination as! EntitiesViewController
-            entitiesViewController.title = NSLocalizedString("ActivitiesViewControllerTitle", comment: "ActivitiesViewControllerTitle")
+            entitiesViewController.title = NSLocalizedString("EntityActivitiesViewControllerTitle", comment: "EntityActivitiesViewControllerTitle")
             entitiesViewController.context = self.context
             entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<Entity>(key: "name", ascending: true, context: self.context, entityName: "ActivityEntity")
         }

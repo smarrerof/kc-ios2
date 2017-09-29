@@ -6,8 +6,8 @@
   Copyright © 2017 Sergio Marrero. All rights reserved.
 */
 
-ShopsViewControllerTitle = "Tiendas";
-ActivitiesViewControllerTitle = "Actividades";
+EntityShopsViewControllerTitle = "Tiendas";
+EntityAntivitiesViewControllerTitle = "Actividades";
 
 NetworkErrorTitle = "Ups, parece que algo ha ido mal";
 NetworkErrorText = "Parece que no hay conectividad a internet. Por favor, cierre la aplicación y vuelva a abrirla cuando se haya solucionado el problema";
