@@ -9,7 +9,7 @@
 import CoreData
 
 protocol GetEntitiesFromCacheInteractor {
-    associatedtype T where T: NSManagedObject
+    associatedtype T where T: NSManagedObject, T: EntityProtocol
     
     var fetchedResultsController: NSFetchedResultsController<T> { get }
 

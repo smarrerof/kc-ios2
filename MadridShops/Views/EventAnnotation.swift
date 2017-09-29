@@ -1,30 +1,30 @@
 //
-//  ActivityAnnotation.swift
+//  EventAnnotation.swift
 //  MadridShops
 //
-//  Created by Sergio Marrero Fernandez on 9/28/17.
+//  Created by Sergio Marrero Fernandez on 9/29/17.
 //  Copyright © 2017 Sergio Marrero. All rights reserved.
 //
 
 import Foundation
 import MapKit
 
-class ActivityAnnotation: NSObject, MKAnnotation {
-    var activityEntity: ActivityEntity
+class EventAnnotation: NSObject, MKAnnotation {
+    var entity: EntityProtocol
     
     var coordinate: CLLocationCoordinate2D {
-        let activityLocation = CLLocation(latitude: Double(activityEntity.latitude), longitude: Double(activityEntity.longitude))
-        return activityLocation.coordinate
+        let shopLocation = CLLocation(latitude: Double(entity.latitude), longitude: Double(entity.longitude))
+        return shopLocation.coordinate
     }
     
     var title: String? {
-        return activityEntity.name
+        return entity.name
     }
     var subtitle: String? {
-        return activityEntity.address
+        return entity.address
     }
     
-    init(activityEntity: ActivityEntity) {
-        self.activityEntity = activityEntity
+    init(entity: EntityProtocol) {
+        self.entity = entity
     }
 }

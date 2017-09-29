@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class GetEntitiesFromCacheInteractorImpl<T>: NSObject, GetEntitiesFromCacheInteractor where T: NSManagedObject {
+class GetEntitiesFromCacheInteractorImpl<T>: NSObject, GetEntitiesFromCacheInteractor where T: NSManagedObject, T: EntityProtocol {
     var key: String
     var ascending: Bool
     var context: NSManagedObjectContext
