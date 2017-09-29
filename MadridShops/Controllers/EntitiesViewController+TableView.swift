@@ -12,7 +12,7 @@ extension EntitiesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entity: BaseEntity = self.entities.fetchedResultsController.object(at: indexPath)
         
-        self.performSegue(withIdentifier: "ShowAEntityDetailSegue", sender: entity)
+        self.performSegue(withIdentifier: "ShowEntityDetailSegue", sender: entity)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

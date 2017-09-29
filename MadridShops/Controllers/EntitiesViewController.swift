@@ -54,11 +54,11 @@ class EntitiesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowActivityDetailSegue" {
-            let activityDetailViewController = segue.destination as! ActivityDetailViewController
+        if segue.identifier == "ShowEntityDetailSegue" {
+            let entityDetailViewController = segue.destination as! EntityDetailViewController
             
-            let activityEntity: ActivityEntity = sender as! ActivityEntity
-            activityDetailViewController.activity = mapActivityEntityIntoActivity(activityEntity: activityEntity)
+            let entity: BaseEntity = sender as! BaseEntity
+            entityDetailViewController.model = mapEntityIntoModel(entity: entity)
         }
     }
 }

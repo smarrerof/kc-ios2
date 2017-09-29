@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -193,7 +194,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-tz-hMx">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-tz-hMx">
                                 <rect key="frame" x="0.0" y="44" width="375" height="311.5"/>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u00-zj-65A">
@@ -264,6 +265,7 @@
                     <connections>
                         <outlet property="mapView" destination="4z2-tz-hMx" id="YO9-Hl-7XF"/>
                         <outlet property="tableView" destination="u00-zj-65A" id="5tI-WP-N0Q"/>
+                        <segue destination="1jB-C8-fyV" kind="show" identifier="ShowEntityDetailSegue" id="xgd-GM-HEm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIq-ag-GV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,6 +431,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPj-UH-tGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2034" y="485"/>
+        </scene>
+        <!--Entity Detail View Controller-->
+        <scene sceneID="t0L-YC-af0">
+            <objects>
+                <viewController id="1jB-C8-fyV" customClass="EntityDetailViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XHr-gA-WzX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LB-sb-Z7x">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3LB-sb-Z7x" secondAttribute="height" multiplier="5:2" id="fZ8-XA-ems"/>
+                                    <constraint firstAttribute="width" constant="375" id="wdt-YK-LLB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnH-LF-Och">
+                                <rect key="frame" x="16" y="222" width="343" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sni-Z5-MFH">
+                                <rect key="frame" x="16" y="257" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iud-ce-QMS">
+                                <rect key="frame" x="16" y="286" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUB-np-BPD">
+                                <rect key="frame" x="16" y="315" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e5O-kV-1Gi" firstAttribute="trailing" secondItem="3LB-sb-Z7x" secondAttribute="trailing" id="0Hd-hC-9ML"/>
+                            <constraint firstItem="e5O-kV-1Gi" firstAttribute="trailing" secondItem="DnH-LF-Och" secondAttribute="trailing" constant="16" id="21h-63-Pj8"/>
+                            <constraint firstItem="Sni-Z5-MFH" firstAttribute="leading" secondItem="e5O-kV-1Gi" secondAttribute="leading" constant="16" id="52O-DF-S6s"/>
+                            <constraint firstItem="AUB-np-BPD" firstAttribute="top" secondItem="Iud-ce-QMS" secondAttribute="bottom" constant="8" id="Jja-sD-Wvk"/>
+                            <constraint firstItem="DnH-LF-Och" firstAttribute="leading" secondItem="e5O-kV-1Gi" secondAttribute="leading" constant="16" id="QOs-sp-CBC"/>
+                            <constraint firstItem="3LB-sb-Z7x" firstAttribute="leading" secondItem="e5O-kV-1Gi" secondAttribute="leading" id="eLQ-7O-pul"/>
+                            <constraint firstItem="e5O-kV-1Gi" firstAttribute="trailing" secondItem="Sni-Z5-MFH" secondAttribute="trailing" constant="16" id="gEs-Ea-DG9"/>
+                            <constraint firstItem="Iud-ce-QMS" firstAttribute="leading" secondItem="e5O-kV-1Gi" secondAttribute="leading" constant="16" id="gfS-RH-joH"/>
+                            <constraint firstItem="DnH-LF-Och" firstAttribute="top" secondItem="3LB-sb-Z7x" secondAttribute="bottom" constant="8" id="h9P-ew-dan"/>
+                            <constraint firstItem="AUB-np-BPD" firstAttribute="leading" secondItem="e5O-kV-1Gi" secondAttribute="leading" constant="16" id="jsO-cY-bw8"/>
+                            <constraint firstItem="Iud-ce-QMS" firstAttribute="top" secondItem="Sni-Z5-MFH" secondAttribute="bottom" constant="8" id="m7i-iD-x9B"/>
+                            <constraint firstItem="e5O-kV-1Gi" firstAttribute="trailing" secondItem="AUB-np-BPD" secondAttribute="trailing" constant="16" id="mOd-Wj-aIC"/>
+                            <constraint firstItem="Sni-Z5-MFH" firstAttribute="top" secondItem="DnH-LF-Och" secondAttribute="bottom" constant="8" id="sxa-xr-4E4"/>
+                            <constraint firstItem="e5O-kV-1Gi" firstAttribute="trailing" secondItem="Iud-ce-QMS" secondAttribute="trailing" constant="16" id="wP3-1e-n0w"/>
+                            <constraint firstItem="3LB-sb-Z7x" firstAttribute="top" secondItem="e5O-kV-1Gi" secondAttribute="top" id="yuL-pA-2be"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e5O-kV-1Gi"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="AUB-np-BPD" id="S20-uR-ahd"/>
+                        <outlet property="imageImageView" destination="3LB-sb-Z7x" id="lkx-oU-EVa"/>
+                        <outlet property="infoLabel" destination="Sni-Z5-MFH" id="YdQ-ye-ISU"/>
+                        <outlet property="nameLabel" destination="DnH-LF-Och" id="yix-h2-QIP"/>
+                        <outlet property="openingHoursLabel" destination="Iud-ce-QMS" id="Aa3-3y-7fF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yQ-cq-t1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="906"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="Y5j-s4-01X">
