@@ -18,6 +18,10 @@
 		496FA8CF1F7E90830068FC7C /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8CE1F7E90830068FC7C /* MapModel.swift */; };
 		496FA8D11F7EA67F0068FC7C /* EntitiesViewController+MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D01F7EA67F0068FC7C /* EntitiesViewController+MapView.swift */; };
 		496FA8D31F7EAEB00068FC7C /* EntityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D21F7EAEB00068FC7C /* EntityDetailViewController.swift */; };
+		496FA8D61F7EF8EA0068FC7C /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D51F7EF8EA0068FC7C /* ModelProtocol.swift */; };
+		496FA8D81F7EFE860068FC7C /* EntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D71F7EFE860068FC7C /* EntityProtocol.swift */; };
+		496FA8DA1F7EFEBB0068FC7C /* ActivityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */; };
+		496FA8DC1F7EFEC40068FC7C /* ShopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */; };
 		4985D0051F75299800C9A731 /* SaveAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */; };
 		4985D0071F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */; };
 		4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0091F752DF900C9A731 /* MapShop.swift */; };
@@ -96,6 +100,10 @@
 		496FA8CE1F7E90830068FC7C /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		496FA8D01F7EA67F0068FC7C /* EntitiesViewController+MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntitiesViewController+MapView.swift"; sourceTree = "<group>"; };
 		496FA8D21F7EAEB00068FC7C /* EntityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDetailViewController.swift; sourceTree = "<group>"; };
+		496FA8D51F7EF8EA0068FC7C /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		496FA8D71F7EFE860068FC7C /* EntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProtocol.swift; sourceTree = "<group>"; };
+		496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntity.swift; sourceTree = "<group>"; };
+		496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopEntity.swift; sourceTree = "<group>"; };
 		4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractor.swift; sourceTree = "<group>"; };
 		4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractorImpl.swift; sourceTree = "<group>"; };
 		4985D0091F752DF900C9A731 /* MapShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShop.swift; sourceTree = "<group>"; };
@@ -182,6 +190,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		496FA8D41F7EF8C70068FC7C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				496FA8D51F7EF8EA0068FC7C /* ModelProtocol.swift */,
+				496FA8D71F7EFE860068FC7C /* EntityProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4985D0081F752DCD00C9A731 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,11 +269,14 @@
 				4985D0181F76860E00C9A731 /* JsonParsers */,
 				4985D0081F752DCD00C9A731 /* Mappers */,
 				49E60FEE1F71B1BB001BCBE6 /* Interactors */,
+				496FA8D41F7EF8C70068FC7C /* Protocols */,
 				496FA8CC1F7E8E9C0068FC7C /* Model.swift */,
 				498AE46F1F7D955A00B9CD71 /* Activity.swift */,
 				49E60FF61F71B2D7001BCBE6 /* Shop.swift */,
 				49E610061F74FBDF001BCBE6 /* MadridShops.xcdatamodeld */,
 				496FA8C41F7E600A0068FC7C /* Entity.swift */,
+				496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */,
+				496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,11 +488,13 @@
 				49E6100A1F74FE19001BCBE6 /* CoreDataStack.swift in Sources */,
 				49E610011F740537001BCBE6 /* StringExtensions.swift in Sources */,
 				49E60FFE1F74035F001BCBE6 /* ShopCell.swift in Sources */,
+				496FA8D81F7EFE860068FC7C /* EntityProtocol.swift in Sources */,
 				496FA8C71F7E8C9D0068FC7C /* EntitiesViewController+TableView.swift in Sources */,
 				4985D0071F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift in Sources */,
 				4985D01A1F76862A00C9A731 /* JsonParseShop.swift in Sources */,
 				49E60FF91F71B360001BCBE6 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */,
 				498AE47C1F7D9A2100B9CD71 /* SaveAllActivitiesInteractorImpl.swift in Sources */,
+				496FA8DC1F7EFEC40068FC7C /* ShopEntity.swift in Sources */,
 				49E60FF71F71B2D7001BCBE6 /* Shop.swift in Sources */,
 				498AE47A1F7D99DB00B9CD71 /* SaveAllActivitiesInteractor.swift in Sources */,
 				4985D00C1F766AA000C9A731 /* ExecuteOnceInteractor.swift in Sources */,
@@ -489,6 +511,7 @@
 				496FA8D31F7EAEB00068FC7C /* EntityDetailViewController.swift in Sources */,
 				498AE47E1F7D9AA500B9CD71 /* MapActivity.swift in Sources */,
 				49D97B261F7DB50000EE11E1 /* ActivitiesViewController+MapView.swift in Sources */,
+				496FA8D61F7EF8EA0068FC7C /* ModelProtocol.swift in Sources */,
 				4985D0111F766AEB00C9A731 /* ExecuteOnceInteractorImpl.swift in Sources */,
 				49D97B1A1F7DA5BF00EE11E1 /* ActivitiesViewController.swift in Sources */,
 				4985D0171F76850300C9A731 /* DownloadAllShopsInteractorNSUrlSessionImpl.swift in Sources */,
@@ -499,6 +522,7 @@
 				496FA8CD1F7E8E9C0068FC7C /* Model.swift in Sources */,
 				496FA8C31F7E5F660068FC7C /* EntityAnnotation.swift in Sources */,
 				498AE46E1F7D950D00B9CD71 /* DownloadAllActivitiesInteractor.swift in Sources */,
+				496FA8DA1F7EFEBB0068FC7C /* ActivityEntity.swift in Sources */,
 				49D97B201F7DB12000EE11E1 /* ActivityDetailViewController.swift in Sources */,
 				49D2CABA1F71068F00FBC491 /* AppDelegate.swift in Sources */,
 				496FA8C51F7E600A0068FC7C /* Entity.swift in Sources */,

@@ -28,7 +28,7 @@ func mapShopIntoShopEntity(context: NSManagedObjectContext, shop: Shop) -> ShopE
     return shopEntity
 }
 
-func mapEntityIntoActivity(entity: BaseEntity) -> Shop {
+func mapEntityIntoActivity(entity: Entity) -> Shop {
     let shop = Shop(name: entity.name ?? "", address: entity.address ?? "")
     
     shop.info_en = entity.info_en ?? ""

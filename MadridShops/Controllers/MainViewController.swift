@@ -107,13 +107,13 @@ class MainViewController: UIViewController {
             let entitiesViewController = segue.destination as! EntitiesViewController
             entitiesViewController.title = NSLocalizedString("ShopsViewControllerTitle", comment: "ShopsViewControllerTitle")
             entitiesViewController.context = self.context
-            entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<BaseEntity>(key: "name", ascending: true, context: self.context, entityName: "ShopEntity")
+            entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<Entity>(key: "name", ascending: true, context: self.context, entityName: "ShopEntity")
         }
         if segue.identifier == "ShowEventActivitiesSegue" {
             let entitiesViewController = segue.destination as! EntitiesViewController
             entitiesViewController.title = NSLocalizedString("ActivitiesViewControllerTitle", comment: "ActivitiesViewControllerTitle")
             entitiesViewController.context = self.context
-            entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<BaseEntity>(key: "name", ascending: true, context: self.context, entityName: "ActivityEntity")
+            entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<Entity>(key: "name", ascending: true, context: self.context, entityName: "ActivityEntity")
         }
     }
 }

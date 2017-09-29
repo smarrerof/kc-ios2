@@ -10,7 +10,7 @@ import UIKit
 
 extension EntitiesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let entity: BaseEntity = self.entities.fetchedResultsController.object(at: indexPath)
+        let entity: Entity = self.entities.fetchedResultsController.object(at: indexPath)
         
         self.performSegue(withIdentifier: "ShowEntityDetailSegue", sender: entity)
     }
@@ -23,7 +23,7 @@ extension EntitiesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EntityCell = tableView.dequeueReusableCell(withIdentifier: "EntityCell", for: indexPath) as! EntityCell
-        let entity: BaseEntity = self.entities.fetchedResultsController.object(at: indexPath)
+        let entity: Entity = self.entities.fetchedResultsController.object(at: indexPath)
         
         cell.refresh(entity: entity)
         

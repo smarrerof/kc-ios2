@@ -21,19 +21,19 @@ class ActivityTests: XCTestCase {
         super.tearDown()
     }
     
-    func testShopCreation() {
+    func testActivityCreation() {
         let activity = Activity(name: "Activity 1", address: "Address 1")
         XCTAssertNotNil(activity)
     }
     
-    func testShopCustomStringConvertible() {
+    func testActivityCustomStringConvertible() {
         let activity = Activity(name: "Activity 1", address: "Address 1")
         
         XCTAssertEqual(activity.description, "Activity: \(activity.name)")
         XCTAssertNotEqual(activity.description, activity.name)
     }
     
-    func testShopEquatable() {
+    func testActivityEquatable() {
         let activity1 = Activity(name: "Activity 1", address: "Address 1")
         let activity2 = Activity(name: "Activity 1", address: "Address 1")
         let activity3 = Activity(name: "Activity 1", address: "Address 2")
@@ -47,13 +47,13 @@ class ActivityTests: XCTestCase {
         XCTAssertNotEqual(activity1, activity5)
     }
     
-    func testShopHashable() {
+    func testActivityHashable() {
         let activity = Activity(name: "Activity 1", address: "Address 1")
         
         XCTAssertNotNil(activity.hashValue)
     }
     
-    func testShopComparable() {
+    func testActivityComparable() {
         let activity1 = Shop(name: "Activity 1", address: "Address 1")
         let activity2 = Shop(name: "Activity 1", address: "Address 2")
         let activity3 = Shop(name: "Activity 2", address: "Address 1")

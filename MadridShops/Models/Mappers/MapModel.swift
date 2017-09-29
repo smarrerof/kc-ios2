@@ -8,7 +8,7 @@
 
 import Foundation
 
-func mapEntityIntoModel(entity: BaseEntity) -> Model {
+func mapEntityIntoModel(entity: Entity) -> Model {
     let model = Model(name: entity.name ?? "", address: entity.address ?? "")
     
     model.info_en = entity.info_en ?? ""

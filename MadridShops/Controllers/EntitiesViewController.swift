@@ -17,7 +17,7 @@ class EntitiesViewController: UIViewController {
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
-    var entities: GetEntitiesFromCacheInteractorImpl<BaseEntity>!
+    var entities: GetEntitiesFromCacheInteractorImpl<Entity>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class EntitiesViewController: UIViewController {
         if segue.identifier == "ShowEntityDetailSegue" {
             let entityDetailViewController = segue.destination as! EntityDetailViewController
             
-            let entity: BaseEntity = sender as! BaseEntity
+            let entity: Entity = sender as! Entity
             entityDetailViewController.model = mapEntityIntoModel(entity: entity)
         }
     }
