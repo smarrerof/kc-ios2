@@ -11,17 +11,26 @@ import CoreData
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var loadingActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var shopsButton: UIButton!
     @IBOutlet weak var activitiesButton: UIButton!
+    
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        self.startApp()
+    }
     
     var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.startApp()
+    }
+    
+    func startApp() {
         if isConnectedToNetwork() {
             ExecuteOnceInteractorImpl().execute(onceClosure: {
+                self.setCachingUI()
                 initializeShopsData()
             }) {
                 self.setApplicationUI()
@@ -54,10 +63,22 @@ class MainViewController: UIViewController {
         }
     }
     
-    func setNotConnectedUI() {
-        loadingActivityIndicatorView.stopAnimating()
+    func setCachingUI() {
+        self.navigationItem.rightBarButtonItem = nil
+        loadingActivityIndicatorView.startAnimating()
+        shopsButton.isEnabled = false
+        activitiesButton.isEnabled = false
     }
+    
+    func setNotConnectedUI() {
+        self.navigationItem.rightBarButtonItem = refreshButton
+        loadingActivityIndicatorView.stopAnimating()
+        shopsButton.isEnabled = false
+        activitiesButton.isEnabled = false
+    }
+    
     func setApplicationUI() {
+        self.navigationItem.rightBarButtonItem = nil
         loadingActivityIndicatorView.stopAnimating()
         shopsButton.isEnabled = true
         activitiesButton.isEnabled = true

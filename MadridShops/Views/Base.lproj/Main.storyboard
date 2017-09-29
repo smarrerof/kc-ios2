@@ -87,10 +87,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="¡MAD!" id="LBT-bU-JoG"/>
+                    <navigationItem key="navigationItem" title="¡MAD!" id="LBT-bU-JoG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="hyC-Ac-YJt">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="pNp-fd-jUT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activitiesButton" destination="a1I-ZG-uhf" id="wUu-bo-kRI"/>
                         <outlet property="loadingActivityIndicatorView" destination="tsB-Ih-ty8" id="qYL-no-9b7"/>
+                        <outlet property="refreshButton" destination="hyC-Ac-YJt" id="0mt-Y4-VoE"/>
                         <outlet property="shopsButton" destination="4mZ-OM-YOf" id="NxV-uo-c5A"/>
                     </connections>
                 </viewController>
