@@ -28,25 +28,6 @@ func mapShopIntoShopEntity(context: NSManagedObjectContext, shop: Shop) -> ShopE
     return shopEntity
 }
 
-func mapEntityIntoActivity(entity: Entity) -> Shop {
-    let shop = Shop(name: entity.name ?? "", address: entity.address ?? "")
-    
-    shop.info_en = entity.info_en ?? ""
-    shop.info_es = entity.info_es ?? ""
-    shop.latitude = entity.latitude
-    shop.longitude = entity.longitude
-    shop.logo = entity.logo ?? ""
-    shop.logoData = entity.logoData
-    shop.image = entity.image ?? ""
-    shop.imageData = entity.imageData
-    shop.openingHours_en = entity.openingHours_en ?? ""
-    shop.openingHours_es = entity.openingHours_es ?? ""
-    shop.mapData = entity.mapData
-    
-    return shop
-}
-
-
 func mapShopEntityIntoShop(shopEntity: ShopEntity) -> Shop {
     let shop = Shop(name: shopEntity.name ?? "", address: shopEntity.address ?? "")
 

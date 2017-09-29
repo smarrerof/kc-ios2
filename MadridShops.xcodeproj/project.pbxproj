@@ -22,6 +22,7 @@
 		496FA8D81F7EFE860068FC7C /* EntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D71F7EFE860068FC7C /* EntityProtocol.swift */; };
 		496FA8DA1F7EFEBB0068FC7C /* ActivityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */; };
 		496FA8DC1F7EFEC40068FC7C /* ShopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */; };
+		496FA8DE1F7EFFB80068FC7C /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8DD1F7EFFB80068FC7C /* MapTests.swift */; };
 		4985D0051F75299800C9A731 /* SaveAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */; };
 		4985D0071F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */; };
 		4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0091F752DF900C9A731 /* MapShop.swift */; };
@@ -104,6 +105,7 @@
 		496FA8D71F7EFE860068FC7C /* EntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProtocol.swift; sourceTree = "<group>"; };
 		496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntity.swift; sourceTree = "<group>"; };
 		496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopEntity.swift; sourceTree = "<group>"; };
+		496FA8DD1F7EFFB80068FC7C /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
 		4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractor.swift; sourceTree = "<group>"; };
 		4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractorImpl.swift; sourceTree = "<group>"; };
 		4985D0091F752DF900C9A731 /* MapShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShop.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				498AE4711F7D95AD00B9CD71 /* ActivityTests.swift */,
 				49E610041F744722001BCBE6 /* ShopTests.swift */,
 				49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */,
+				496FA8DD1F7EFFB80068FC7C /* MapTests.swift */,
 			);
 			path = MadridShopsTests;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 			files = (
 				498AE4721F7D95AD00B9CD71 /* ActivityTests.swift in Sources */,
 				49E60FFC1F71B414001BCBE6 /* ShopsTests.swift in Sources */,
+				496FA8DE1F7EFFB80068FC7C /* MapTests.swift in Sources */,
 				49E610051F744723001BCBE6 /* ShopTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
