@@ -14,9 +14,9 @@ class EntityCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var openingHoursLabel: UILabel!
     
-    var entity: BaseEntity?
+    var entity: EntityProtocol?
     
-    func refresh(entity: BaseEntity) {
+    func refresh(entity: EntityProtocol) {
         self.entity = entity
         if let logoData = entity.logoData {
             self.logoImageView.image = UIImage(data: logoData)

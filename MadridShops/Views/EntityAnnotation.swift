@@ -1,5 +1,5 @@
 //
-//  EventAnnotation.swift
+//  EntityAnnotation.swift
 //  MadridShops
 //
 //  Created by Sergio Marrero Fernandez on 9/29/17.
@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class EventAnnotation: NSObject, MKAnnotation {
+class EntityAnnotation: NSObject, MKAnnotation {
     var entity: EntityProtocol
     
     var coordinate: CLLocationCoordinate2D {

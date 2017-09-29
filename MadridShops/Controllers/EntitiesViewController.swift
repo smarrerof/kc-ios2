@@ -17,7 +17,7 @@ class EntitiesViewController: UIViewController {
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
-    var entities: GetEntitiesFromCacheInteractorImpl<ActivityEntity>!
+    var entities: GetEntitiesFromCacheInteractorImpl<BaseEntity>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +43,11 @@ class EntitiesViewController: UIViewController {
         self.mapView.setRegion(regionThatFits, animated: true)
         
         // Add map annotations
-        //self.mapView.delegate = self
+        self.mapView.delegate = self
         
         if let fetchedObjects = self.entities.fetchedResultsController.fetchedObjects {
             for entity in fetchedObjects {
-                let annotation = EventAnnotation(entity: entity)
+                let annotation = EntityAnnotation(entity: entity)
                 self.mapView.addAnnotation(annotation)
             }
         }

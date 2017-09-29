@@ -15,7 +15,7 @@
         <attribute name="openingHours_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="openingHours_es" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="ShopEntity" representedClassName="ShopEntity" syncable="YES" codeGenerationType="class">
+    <entity name="ShopEntity" representedClassName="ShopEntity" syncable="YES">
         <attribute name="address" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>

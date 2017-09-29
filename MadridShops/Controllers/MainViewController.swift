@@ -83,14 +83,14 @@ class MainViewController: UIViewController {
         }
         
         if segue.identifier == "ShowEventShopsSegue" {
-            let eventsViewController = segue.destination as! EntitiesViewController
-            eventsViewController.context = self.context
-            //eventsViewController.entities = GetEntitiesFromCacheInteractorImpl<ShopEntity>(key: "name", ascending: true, context: self.context, entityName: "ShopEntity")
+            let entitiesViewController = segue.destination as! EntitiesViewController
+            entitiesViewController.context = self.context
+            entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<BaseEntity>(key: "name", ascending: true, context: self.context, entityName: "ShopEntity")
         }
         if segue.identifier == "ShowEventActivitiesSegue" {
-            let eventsViewController = segue.destination as! EntitiesViewController
-            eventsViewController.context = self.context
-            eventsViewController.entities = GetEntitiesFromCacheInteractorImpl<ActivityEntity>(key: "name", ascending: true, context: self.context, entityName: "ActivityEntity")
+            let entitiesViewController = segue.destination as! EntitiesViewController
+            entitiesViewController.context = self.context
+            entitiesViewController.entities = GetEntitiesFromCacheInteractorImpl<BaseEntity>(key: "name", ascending: true, context: self.context, entityName: "ActivityEntity")
         }
     }
 }

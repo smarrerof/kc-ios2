@@ -15,6 +15,7 @@ protocol EntityProtocol {
     var imageData: Data? { get set }
     var info_en: String? { get set }
     var info_es: String? { get set }
+    var info: String { get }
     var latitude: Float { get set }
     var logo: String? { get set }
     var logoData: Data? { get set }
@@ -23,6 +24,7 @@ protocol EntityProtocol {
     var name: String? { get set }
     var openingHours_en: String? { get set }
     var openingHours_es: String? { get set }
+    var openingHours: String { get }
 }
 
 class BaseEntity: NSManagedObject, EntityProtocol {
@@ -60,11 +62,9 @@ class BaseEntity: NSManagedObject, EntityProtocol {
 }
 
 @objc(ActivityEntity)
-class ActivityEntity: BaseEntity {}
+class ActivityEntity: BaseEntity { }
 
-
-extension ShopEntity: EntityProtocol {
-    
-}
+@objc(ShopEntity)
+class ShopEntity: BaseEntity { }
 
 
