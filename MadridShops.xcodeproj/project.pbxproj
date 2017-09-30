@@ -78,6 +78,8 @@
 /* Begin PBXFileReference section */
 		492F57AB1F7FCBE400A81D24 /* shops.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shops.jpg; sourceTree = "<group>"; };
 		492F57AD1F7FD33000A81D24 /* activities.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = activities.jpg; sourceTree = "<group>"; };
+		492F57B61F80491600A81D24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		492F57B81F80491900A81D24 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		493F95391F7A75D4003E29B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493F953C1F7A7613003E29B8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		493F953D1F7A7613003E29B8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -96,8 +98,6 @@
 		496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntity.swift; sourceTree = "<group>"; };
 		496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopEntity.swift; sourceTree = "<group>"; };
 		496FA8DD1F7EFFB80068FC7C /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
-		496FA8E11F7F0DC10068FC7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		496FA8E31F7F0DC30068FC7C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractor.swift; sourceTree = "<group>"; };
 		4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractorImpl.swift; sourceTree = "<group>"; };
 		4985D0091F752DF900C9A731 /* MapShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShop.swift; sourceTree = "<group>"; };
@@ -532,8 +532,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				49D2CABE1F71068F00FBC491 /* Base */,
-				496FA8E11F7F0DC10068FC7C /* en */,
-				496FA8E31F7F0DC30068FC7C /* es */,
+				492F57B61F80491600A81D24 /* en */,
+				492F57B81F80491900A81D24 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

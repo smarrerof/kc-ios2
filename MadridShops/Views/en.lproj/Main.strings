@@ -20,8 +20,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "Sni-Z5-MFH"; */
 "Sni-Z5-MFH.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Shops"; ObjectID = "Zrp-ib-6Xh"; */
-"Zrp-ib-6Xh.normalTitle" = "Shops";
+/* Class = "UILabel"; text = "Shops"; ObjectID = "gFE-Dd-OlD"; */
+"gFE-Dd-OlD.text" = "Shops";
 
-/* Class = "UIButton"; normalTitle = "Activities"; ObjectID = "uzH-xp-8Sr"; */
-"uzH-xp-8Sr.normalTitle" = "Activities";
+/* Class = "UILabel"; text = "Activities"; ObjectID = "xeb-Hn-TNR"; */
+"xeb-Hn-TNR.text" = "Activities";
