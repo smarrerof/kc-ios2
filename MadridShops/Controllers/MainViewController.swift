@@ -13,8 +13,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var loadingActivityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var shopsButton: UIButton!
-    @IBOutlet weak var activitiesButton: UIButton!
+    @IBOutlet weak var viewShops: UIView!
+    @IBOutlet weak var viewActivities: UIView!
     
     @IBAction func refreshButtonTapped(_ sender: Any) {
         self.startApp()
@@ -66,22 +66,22 @@ class MainViewController: UIViewController {
     func setCachingUI() {
         self.navigationItem.rightBarButtonItem = nil
         loadingActivityIndicatorView.startAnimating()
-        shopsButton.isEnabled = false
-        activitiesButton.isEnabled = false
+        viewShops.isHidden = true
+        viewActivities.isHidden = true
     }
     
     func setNotConnectedUI() {
         self.navigationItem.rightBarButtonItem = refreshButton
         loadingActivityIndicatorView.stopAnimating()
-        shopsButton.isEnabled = false
-        activitiesButton.isEnabled = false
+        viewShops.isHidden = true
+        viewActivities.isHidden = true
     }
     
     func setApplicationUI() {
         self.navigationItem.rightBarButtonItem = nil
         loadingActivityIndicatorView.stopAnimating()
-        shopsButton.isEnabled = true
-        activitiesButton.isEnabled = true
+        viewShops.isHidden = false
+        viewActivities.isHidden = false
     }
     
     func showAlert() {
