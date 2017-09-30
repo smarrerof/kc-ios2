@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		492F57AC1F7FCE9A00A81D24 /* shops.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 492F57AB1F7FCBE400A81D24 /* shops.jpg */; };
 		492F57AE1F7FD48000A81D24 /* activities.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 492F57AD1F7FD33000A81D24 /* activities.jpg */; };
+		492F57BD1F80556200A81D24 /* madrid-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 492F57BC1F80555A00A81D24 /* madrid-logo.png */; };
 		493F95381F7A75D4003E29B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493F953A1F7A75D4003E29B8 /* Localizable.strings */; };
-		493F95431F7AE724003E29B8 /* madrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 493F95421F7AE719003E29B8 /* madrid.png */; };
 		49477E281F77D8E0005001AB /* ConnectivityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49477E271F77D8E0005001AB /* ConnectivityHelper.swift */; };
 		496FA8C31F7E5F660068FC7C /* EntityAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8C21F7E5F660068FC7C /* EntityAnnotation.swift */; };
 		496FA8C51F7E600A0068FC7C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8C41F7E600A0068FC7C /* Entity.swift */; };
@@ -80,10 +80,10 @@
 		492F57AD1F7FD33000A81D24 /* activities.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = activities.jpg; sourceTree = "<group>"; };
 		492F57B61F80491600A81D24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		492F57B81F80491900A81D24 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		492F57BC1F80555A00A81D24 /* madrid-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "madrid-logo.png"; sourceTree = "<group>"; };
 		493F95391F7A75D4003E29B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		493F953C1F7A7613003E29B8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		493F953D1F7A7613003E29B8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		493F95421F7AE719003E29B8 /* madrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = madrid.png; path = ../../../../../../../Dropbox/madrid.png; sourceTree = "<group>"; };
 		49477E271F77D8E0005001AB /* ConnectivityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityHelper.swift; sourceTree = "<group>"; };
 		496FA8C21F7E5F660068FC7C /* EntityAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityAnnotation.swift; sourceTree = "<group>"; };
 		496FA8C41F7E600A0068FC7C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 		493F95351F7A6680003E29B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				492F57BC1F80555A00A81D24 /* madrid-logo.png */,
 				492F57AD1F7FD33000A81D24 /* activities.jpg */,
-				493F95421F7AE719003E29B8 /* madrid.png */,
 				492F57AB1F7FCBE400A81D24 /* shops.jpg */,
 				493F953A1F7A75D4003E29B8 /* Localizable.strings */,
 			);
@@ -427,9 +427,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492F57BD1F80556200A81D24 /* madrid-logo.png in Resources */,
 				492F57AE1F7FD48000A81D24 /* activities.jpg in Resources */,
 				492F57AC1F7FCE9A00A81D24 /* shops.jpg in Resources */,
-				493F95431F7AE724003E29B8 /* madrid.png in Resources */,
 				49D2CAC41F71068F00FBC491 /* LaunchScreen.storyboard in Resources */,
 				493F95381F7A75D4003E29B8 /* Localizable.strings in Resources */,
 				49D2CAC11F71068F00FBC491 /* Assets.xcassets in Resources */,

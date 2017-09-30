@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-es-Xbg">
                                 <rect key="frame" x="8" y="276" width="359" height="115.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madrid.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-mw-DpC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madrid-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-mw-DpC">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="95"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shops and activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NE-R3-50J">
@@ -48,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="madrid.png" width="474" height="95"/>
+        <image name="madrid-logo.png" width="474" height="95"/>
     </resources>
 </document>

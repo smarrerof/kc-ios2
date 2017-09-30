@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 class DownloadAllShopsInteractorNSUrlSessionImpl: DownloadAllShopsInteractor {
     func execute(onSuccess: @escaping shopsSuccessClosure) {
