@@ -29,8 +29,8 @@ class DownloadAllActivitiesInteractorNSUrlSessionImpl: DownloadAllActivitiesInte
                     activity.logoData = activity.logo.downloadImage()
                     activity.imageData = activity.image.downloadImage()
                     
-                    //let mapUrl = "https://maps.googleapis.com/maps/api/staticmap?center=\(shop.latitude!),\(shop.longitude!)&zoom=17&size=375x150"
-                    //shop.mapData = mapUrl.downloadImage()
+                    let mapUrl = "https://maps.googleapis.com/maps/api/staticmap?center=\(activity.latitude!),\(activity.longitude!)&zoom=17&size=375x150&scale=1&markers=\(activity.latitude!),\(activity.longitude!)"
+                    activity.mapData = mapUrl.downloadImage()
                 }
                 
                 // Return to main thread and call the onSuccess closure
