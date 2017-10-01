@@ -38,6 +38,7 @@ The app has been tested in **iOS 10 and iOS11**.
 2. Shop/Activity list and detail is shown with only one ViewController. Access to CoreDate is managed by a class that uses a generic class to access to the correct table. This class can be extended to accept filters.
 3. CocoaPod is not used, so access to network is managed by a custom class.
 4. A red border is added as background image to each cell.
+5. Download and cache shops and activities are is custom classes because each entity can download more information that the information that is abstracted in the entity/model classes. At this moment this information is the same, but more viewcontrollers can be added to use this extended information. 
 
 ### Demo
 ![MadridShops Demo](https://raw.githubusercontent.com/smarrerof/kc-ios2/master/madridapp-ios.gif)
