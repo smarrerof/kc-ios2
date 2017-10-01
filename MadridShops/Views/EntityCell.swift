@@ -17,6 +17,11 @@ class EntityCell: UITableViewCell {
     var entity: EntityProtocol?
     
     func refresh(entity: EntityProtocol) {
+        // Set cell backgroud
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "cell-background.png"))
+        self.backgroundView = imageView
+        
+        // Set cell data
         self.entity = entity
         if let logoData = entity.logoData {
             self.logoImageView.image = UIImage(data: logoData)

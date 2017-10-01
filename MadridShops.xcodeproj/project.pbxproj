@@ -25,6 +25,7 @@
 		496FA8DA1F7EFEBB0068FC7C /* ActivityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */; };
 		496FA8DC1F7EFEC40068FC7C /* ShopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */; };
 		496FA8DE1F7EFFB80068FC7C /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FA8DD1F7EFFB80068FC7C /* MapTests.swift */; };
+		49839AA01F814B5A0029708E /* cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 49839A9F1F814B500029708E /* cell-background.png */; };
 		4985D0051F75299800C9A731 /* SaveAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */; };
 		4985D0071F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */; };
 		4985D00A1F752DF900C9A731 /* MapShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985D0091F752DF900C9A731 /* MapShop.swift */; };
@@ -99,6 +100,7 @@
 		496FA8D91F7EFEBB0068FC7C /* ActivityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEntity.swift; sourceTree = "<group>"; };
 		496FA8DB1F7EFEC40068FC7C /* ShopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopEntity.swift; sourceTree = "<group>"; };
 		496FA8DD1F7EFFB80068FC7C /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
+		49839A9F1F814B500029708E /* cell-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-background.png"; sourceTree = "<group>"; };
 		4985D0041F75299800C9A731 /* SaveAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractor.swift; sourceTree = "<group>"; };
 		4985D0061F752CCE00C9A731 /* SaveAllShopsInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractorImpl.swift; sourceTree = "<group>"; };
 		4985D0091F752DF900C9A731 /* MapShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShop.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				492F57BC1F80555A00A81D24 /* madrid-logo.png */,
+				49839A9F1F814B500029708E /* cell-background.png */,
 				492F57AD1F7FD33000A81D24 /* activities.jpg */,
 				492F57AB1F7FCBE400A81D24 /* shops.jpg */,
 				493F953A1F7A75D4003E29B8 /* Localizable.strings */,
@@ -430,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49839AA01F814B5A0029708E /* cell-background.png in Resources */,
 				492F57BD1F80556200A81D24 /* madrid-logo.png in Resources */,
 				492F57AE1F7FD48000A81D24 /* activities.jpg in Resources */,
 				492F57AC1F7FCE9A00A81D24 /* shops.jpg in Resources */,
