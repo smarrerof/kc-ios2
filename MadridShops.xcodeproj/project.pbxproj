@@ -52,6 +52,7 @@
 		49D97B2A1F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B291F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift */; };
 		49D97B2C1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B2B1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift */; };
 		49D97B2E1F7E3A4C00EE11E1 /* EntitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D97B2D1F7E3A4C00EE11E1 /* EntitiesViewController.swift */; };
+		49E478201F81446C00E387F1 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4781F1F81446C00E387F1 /* StringExtensionsTests.swift */; };
 		49E60FF11F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */; };
 		49E60FF31F71B239001BCBE6 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF21F71B239001BCBE6 /* Typealias.swift */; };
 		49E60FF51F71B2B8001BCBE6 /* ShopsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */; };
@@ -129,6 +130,7 @@
 		49D97B291F7DB7C100EE11E1 /* GetEntitiesFromCacheInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntitiesFromCacheInteractorImpl.swift; sourceTree = "<group>"; };
 		49D97B2B1F7DBEB700EE11E1 /* GetEntitiesFromCacheInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntitiesFromCacheInteractor.swift; sourceTree = "<group>"; };
 		49D97B2D1F7E3A4C00EE11E1 /* EntitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesViewController.swift; sourceTree = "<group>"; };
+		49E4781F1F81446C00E387F1 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		49E60FF01F71B1ED001BCBE6 /* DownloadAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractor.swift; sourceTree = "<group>"; };
 		49E60FF21F71B239001BCBE6 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		49E60FF41F71B2B8001BCBE6 /* ShopsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsProtocol.swift; sourceTree = "<group>"; };
@@ -241,9 +243,10 @@
 				49D2CAD01F71068F00FBC491 /* Info.plist */,
 				49E60FFA1F71B413001BCBE6 /* MadridShopsTests-Bridging-Header.h */,
 				498AE4711F7D95AD00B9CD71 /* ActivityTests.swift */,
+				496FA8DD1F7EFFB80068FC7C /* MapTests.swift */,
 				49E610041F744722001BCBE6 /* ShopTests.swift */,
 				49E60FFB1F71B414001BCBE6 /* ShopsTests.swift */,
-				496FA8DD1F7EFFB80068FC7C /* MapTests.swift */,
+				49E4781F1F81446C00E387F1 /* StringExtensionsTests.swift */,
 			);
 			path = MadridShopsTests;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				498AE4721F7D95AD00B9CD71 /* ActivityTests.swift in Sources */,
 				49E60FFC1F71B414001BCBE6 /* ShopsTests.swift in Sources */,
 				496FA8DE1F7EFFB80068FC7C /* MapTests.swift in Sources */,
+				49E478201F81446C00E387F1 /* StringExtensionsTests.swift in Sources */,
 				49E610051F744723001BCBE6 /* ShopTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

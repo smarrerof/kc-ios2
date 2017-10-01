@@ -6,6 +6,7 @@
 //  Copyright © 2017 Sergio Marrero. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 extension String {
@@ -40,5 +41,10 @@ extension String {
         }
         
         return nil
+    }
+    
+    func parseLatLong() -> Float? {
+        return Float(self.trimmingCharacters(in: .whitespaces)
+            .replacingOccurrences(of: ",", with: ""))
     }
 }

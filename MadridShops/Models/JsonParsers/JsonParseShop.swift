@@ -18,12 +18,8 @@ func parseShop(data: Data) -> Shops {
             let shop = Shop(name: shopJson["name"]! as! String, address: shopJson["address"]! as! String)
             shop.info_en = shopJson["description_en"]! as! String
             shop.info_es = shopJson["description_es"]! as! String
-            shop.latitude = Float((shopJson["gps_lat"]! as! String)
-                .trimmingCharacters(in: .whitespaces)
-                .replacingOccurrences(of: ",", with: ""))
-            shop.longitude = Float((shopJson["gps_lon"]! as! String)
-                .trimmingCharacters(in: .whitespaces)
-                .replacingOccurrences(of: ",", with: ""))
+            shop.latitude = (shopJson["gps_lat"]! as! String).parseLatLong()
+            shop.longitude = (shopJson["gps_lon"]! as! String).parseLatLong()
             shop.logo = shopJson["logo_img"]! as! String
             shop.image = shopJson["img"]! as! String
             shop.openingHours_en = shopJson["opening_hours_en"]! as! String
@@ -47,12 +43,8 @@ func parseActivity(data: Data) -> Activities {
             let activity = Activity(name: shopJson["name"]! as! String, address: shopJson["address"]! as! String)
             activity.info_en = shopJson["description_en"]! as! String
             activity.info_es = shopJson["description_es"]! as! String
-            activity.latitude = Float((shopJson["gps_lat"]! as! String)
-                .trimmingCharacters(in: .whitespaces)
-                .replacingOccurrences(of: ",", with: ""))
-            activity.longitude = Float((shopJson["gps_lon"]! as! String)
-                .trimmingCharacters(in: .whitespaces)
-                .replacingOccurrences(of: ",", with: ""))
+            activity.latitude = (shopJson["gps_lat"]! as! String).parseLatLong()
+            activity.longitude = (shopJson["gps_lon"]! as! String).parseLatLong()
             activity.logo = shopJson["logo_img"]! as! String
             activity.image = shopJson["img"]! as! String
             activity.openingHours_en = shopJson["opening_hours_en"]! as! String
