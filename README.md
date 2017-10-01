@@ -19,3 +19,19 @@ point (see below), including all images.
 11. The map will be always centered in madrid, showing also the user location.
 12. All data is at least in Spanish & English: should cache all and display in Spanish (if that's our phone's language) or English otherwise
 13. Shop detail screen should show shop name, description, address, and a map showing the shops's location without any pin.
+
+
+## Installation
+To install the application execute the next commands
+```
+$ git clone https://github.com/smarrerof/kc-ios2
+$ cd kc-ios2
+$ open MadridShops.xcodeproj
+```
+
+Run and enjoy the app in your favorite emulator or in your device
+
+The app has been tested in **iOS 10 and iOS11**.
+
+### Demo
+![MadridShops Demo](https://raw.githubusercontent.com/smarrerof/kc-ios2/master/madridapp-ios.gif)
