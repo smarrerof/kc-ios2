@@ -33,5 +33,11 @@ Run and enjoy the app in your favorite emulator or in your device
 
 The app has been tested in **iOS 10 and iOS11**.
 
+## 
+1. CoreData is used as cache. Shops and actvities are saved in CoreData when the app runs for the firt time. Logo, image and static map for each Shop/Activity are stored in CoreData as well.
+2. Shop/Activity list and detail is shown with only one ViewController. Access to CoreDate is managed by a class that uses a generic class to access to the correct table. This class can be extended to accept filters.
+3. CocoaPod is not used, so access to network is managed by a custom class.
+4. A red border is added as background image to each cell.
+
 ### Demo
 ![MadridShops Demo](https://raw.githubusercontent.com/smarrerof/kc-ios2/master/madridapp-ios.gif)
